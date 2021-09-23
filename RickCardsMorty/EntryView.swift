@@ -12,15 +12,19 @@ struct EntryView: View {
     var body: some View {
         switch authViewModel.sessionState {
         case .signedIn :
-            Text("Home")
+            HomeView()
         case .signedOut:
             LoginView()
         }
     }
 }
 
+#if DEBUG
+
 struct EntryView_Previews: PreviewProvider {
     static var previews: some View {
         EntryView()
     }
 }
+
+#endif

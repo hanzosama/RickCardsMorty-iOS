@@ -56,7 +56,7 @@ struct ActivityIndicator: View {
 }
 
 struct ActivityIndicator_Previews: PreviewProvider {
-    @State static var show = false
+    @State static var show = true
     static var previews: some View {
         ActivityIndicator(show: $show)
     }

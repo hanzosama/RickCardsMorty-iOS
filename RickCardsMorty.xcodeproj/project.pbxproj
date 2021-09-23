@@ -9,17 +9,24 @@
 /* Begin PBXBuildFile section */
 		35446C4649EE8283F5C3C79E /* Pods_RickCardsMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */; };
 		3EC0603EDF20183603059D50 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */; };
+		572B4AB626EFE66B000D9410 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB526EFE66B000D9410 /* Request.swift */; };
+		572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB726EFE863000D9410 /* RequestDispatcher.swift */; };
+		572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE52E26F01319007F1AEF /* CharacterService.swift */; };
+		572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE53126FBC893007F1AEF /* HomeViewModel.swift */; };
+		574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5526FCDC8D00FC47CF /* View+Extension.swift */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
 		57539F5326DD6E7500BFC63F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F5226DD6E7500BFC63F /* Preview Assets.xcassets */; };
-		57539F5E26DD6E7500BFC63F /* RickCardsMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */; };
 		57539F6926DD6E7500BFC63F /* RickCardsMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F6826DD6E7500BFC63F /* RickCardsMortyUITests.swift */; };
 		57539F7726DD717C00BFC63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57539F7626DD717C00BFC63F /* GoogleService-Info.plist */; };
 		5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35126E037A300D35C07 /* ActivityIndicator.swift */; };
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
 		578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */; };
+		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
+		57E7091326EAC23B005243F1 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CardRow.swift */; };
+		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
 		AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +50,11 @@
 /* Begin PBXFileReference section */
 		1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.release.xcconfig"; sourceTree = "<group>"; };
+		572B4AB526EFE66B000D9410 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		572B4AB726EFE863000D9410 /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
+		572BE52E26F01319007F1AEF /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		572BE53126FBC893007F1AEF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		574A3F5526FCDC8D00FC47CF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		57539F4826DD6E7300BFC63F /* RickCardsMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickCardsMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCardsMortyApp.swift; sourceTree = "<group>"; };
 		57539F4D26DD6E7300BFC63F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -60,6 +72,10 @@
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		57E7091226EAC23A005243F1 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
+		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.release.xcconfig"; sourceTree = "<group>"; };
 		5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMorty_RickCardsMortyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMortyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +126,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		572B4AB326EFE639000D9410 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				572B4AB526EFE66B000D9410 /* Request.swift */,
+				572B4AB726EFE863000D9410 /* RequestDispatcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		572BE52D26F01278007F1AEF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				572BE52E26F01319007F1AEF /* CharacterService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		572BE53026FBC87C007F1AEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				572BE53126FBC893007F1AEF /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		57539F3F26DD6E7300BFC63F = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +177,11 @@
 		57539F4A26DD6E7300BFC63F /* RickCardsMorty */ = {
 			isa = PBXGroup;
 			children = (
-				5768F35026E0378C00D35C07 /* Utils */,
+				572BE52D26F01278007F1AEF /* Service */,
+				572B4AB326EFE639000D9410 /* Networking */,
+				57E7090D26EAC0CF005243F1 /* Home */,
 				578CAC7B26DD95B70062DA31 /* Login */,
+				5768F35026E0378C00D35C07 /* Utils */,
 				57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */,
 				57539F4F26DD6E7500BFC63F /* Assets.xcassets */,
 				57539F5426DD6E7500BFC63F /* Info.plist */,
@@ -158,8 +202,8 @@
 		57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */ = {
 			isa = PBXGroup;
 			children = (
-				57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */,
 				57539F5F26DD6E7500BFC63F /* Info.plist */,
+				57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */,
 			);
 			path = RickCardsMortyTests;
 			sourceTree = "<group>";
@@ -176,7 +220,9 @@
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				57E7091826EAC723005243F1 /* TestPlayground.playground */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
+				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -184,9 +230,8 @@
 		578CAC7B26DD95B70062DA31 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				57E7090E26EAC0E1005243F1 /* View */,
 				578CAC7E26DDAB080062DA31 /* ViewModel */,
-				57539F4D26DD6E7300BFC63F /* LoginView.swift */,
-				578CAC7C26DD95D50062DA31 /* SignInButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -197,6 +242,42 @@
 				578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		57E7090D26EAC0CF005243F1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				572BE53026FBC87C007F1AEF /* ViewModel */,
+				57E7091426EAC244005243F1 /* Model */,
+				57E7090F26EAC0FC005243F1 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		57E7090E26EAC0E1005243F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57539F4D26DD6E7300BFC63F /* LoginView.swift */,
+				578CAC7C26DD95D50062DA31 /* SignInButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57E7090F26EAC0FC005243F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57E7091026EAC10F005243F1 /* HomeView.swift */,
+				57E7091226EAC23A005243F1 /* CardRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57E7091426EAC244005243F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57E7091526EAC275005243F1 /* Character.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		75C35BFF6BDBF0424C1C7775 /* Frameworks */ = {
@@ -447,11 +528,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E7091626EAC275005243F1 /* Character.swift in Sources */,
 				578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */,
+				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
+				57E7091326EAC23B005243F1 /* CardRow.swift in Sources */,
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
 				57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
+				572B4AB626EFE66B000D9410 /* Request.swift in Sources */,
+				572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */,
 				578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */,
+				572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */,
+				572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */,
+				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +549,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57539F5E26DD6E7500BFC63F /* RickCardsMortyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
