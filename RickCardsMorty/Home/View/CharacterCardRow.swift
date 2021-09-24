@@ -20,20 +20,52 @@ struct CharacterCardRow: View {
     var body: some View {
         ZStack{
             Color("cardColor").edgesIgnoringSafeArea(.all)
-            VStack{
+            VStack(alignment: .center){
                 RemoteImage(stringURL:character.imageUrl,
-                            imagePlaceholder: { Text("Loading ...") }
+                            imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white: .black) }
                             ,image: { Image(uiImage: $0).resizable() })
                     .padding(20)
                     .aspectRatio(contentMode: .fit)
-                HStack {
-                    Circle()
-                        .fill(statusColor)
-                        .frame(width: 10, height: 10, alignment: .center)
-                    Text("\(character.status.rawValue) - \(character.species)")
-                        .font(Font.custom(mainFont, size: 18))
+                VStack(alignment:.leading,spacing:0){
+                    Text(character.name)
+                        .font(Font.custom(mainFont, size: 24))
+                        .bold()
                         .foregroundColor(colorScheme == .light ? .white: .black)
+                        .frame(maxWidth:.infinity, alignment: .leading)
+                    
+                    HStack{
+                        Circle()
+                            .fill(statusColor)
+                            .frame(width: 10, height: 10, alignment: .center)
+                        Text("\(character.status.rawValue) - \(character.species)")
+                            .font(Font.custom(mainFont, size: 18))
+                            .foregroundColor(colorScheme == .light ? .white: .black)
+                    }
+                    HStack{
+                        Text("Gender - ")
+                            .font(Font.custom(mainFont, size: 18))
+                            .foregroundColor(colorScheme == .light ? .white: .black)
+                        genderImage
+                            .resizable()
+                            .frame(width: 25, height: 25, alignment: .center)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(colorScheme == .light ? .white: .black)
+                    }
+                    HStack{
+                        Text("Origin - \(character.origin.name)")
+                            .font(Font.custom(mainFont, size: 18))
+                            .foregroundColor(colorScheme == .light ? .white: .black)
+                        
+                    }
+                    HStack{
+                        Text("Last known location - \(character.location.name)")
+                            .font(Font.custom(mainFont, size: 18))
+                            .foregroundColor(colorScheme == .light ? .white: .black)
+                        
+                    }
                 }
+                .padding(.horizontal, 20)
+                .padding(.bottom,20)
             }
         }
         .cornerRadius(5)
@@ -51,13 +83,27 @@ struct CharacterCardRow: View {
             return Color.gray
         }
     }
+    
+    var genderImage: Image {
+        switch character.gender
+        {
+        case .female:
+            return  Image("female")
+        case .male:
+            return Image("male")
+        case .genderless:
+            return Image("noGender")
+        case .unknown:
+            return Image(systemName: "questionmark.square.dashed")
+        }
+    }
 }
 
 #if DEBUG
 
 struct CharacterCardRow_Previews: PreviewProvider {
     static var previews: some View {
-        let character = Character(id: 1, name: "Rick", status: .alive, species: "Human", gender: "Male", imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
+        let character = Character(id: 1, name: "Rick", status: .alive, species: "Human", gender: .unknown, imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",origin: .init(name: "Earth"), location: .init(name: "Earth C-132"))
         CharacterCardRow(character)
             .preferredColorScheme(.light)
     }
