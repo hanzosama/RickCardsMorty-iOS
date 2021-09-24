@@ -14,8 +14,17 @@ struct CharacterCardRow: View {
     }
     var body: some View {
         ZStack{
-        Text("Name:"+character.name)
+            Color("cardColor").edgesIgnoringSafeArea(.all)
+            VStack{
+                RemoteImage(stringURL:character.imageUrl,
+                            imagePlaceholder: { Text("Loading ...") }
+                            ,image: { Image(uiImage: $0).resizable() })
+                    .padding(20)
+                    .aspectRatio(contentMode: .fit)
+            }
         }
+        .cornerRadius(5)
+        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
     }
 }
 

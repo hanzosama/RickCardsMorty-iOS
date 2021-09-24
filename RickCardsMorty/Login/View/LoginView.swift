@@ -27,7 +27,7 @@ struct LoginView: View {
                     .padding(.horizontal, 150)
                 Text("Please sign on with:")
                     .font(Font.custom("ChalkboardSE-Regular", size: 20))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.white)
                     .padding(.vertical, 30)
                 SignInButton(){ //This is the target closure in the custom view
                     authViewModel.signIn()

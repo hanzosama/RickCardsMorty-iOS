@@ -28,11 +28,11 @@ struct HomeView: View {
                         ScrollView {
                             LazyVStack{
                                 ForEach(viewModel.characters, id: \.id) { character in
-                                    Text(character.name)
+                                    CharacterCardRow(character)
                                         .onAppear {
                                             viewModel.loadMoreCharacteres(currentCharater: character)
                                         }
-                                        .padding(.all,50)
+                                        .padding(.all,10)
                                 }
                             }
                             .id(topID)
@@ -65,7 +65,7 @@ struct HomeView: View {
                                     .padding()
                                     .background(Color.red)
                                     .clipShape(Circle())
-                                    .shadow(color: Color.black.opacity(0.09), radius: 5, x: 5, y: 5)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
                             })
                             .padding(.trailing)
                             .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0)
@@ -85,15 +85,19 @@ struct HomeView: View {
                                                     authViewModel.signOut()
                                                 }
                                             }, label: {
-                                                Image(systemName: "arrow.forward.square")
-                                                    .font(.largeTitle)
+                                                Image(systemName: "arrow.forward")
+                                                    .frame(width: 60,height: 30)
+                                                    .background(Color.red)
+                                                    .cornerRadius(5)
+                                                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
                                             }
                                             )
-                                        }.foregroundColor(.red)
+                                        }
+                                        .foregroundColor(.white)
                 )
                 
             }
-            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .black, titleFontName: "ChalkboardSE-Regular", largeTitleFontName: "ChalkboardSE-Regular")
+            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .white, titleFontName: "ChalkboardSE-Regular", largeTitleFontName: "ChalkboardSE-Regular")
             .navigationViewStyle(StackNavigationViewStyle())
             .onAppear{
                 viewModel.loadCharacters()
