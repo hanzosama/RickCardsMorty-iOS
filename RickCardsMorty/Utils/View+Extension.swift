@@ -12,4 +12,8 @@ extension View{
     func getSafeArea() -> UIEdgeInsets{
         return UIApplication.shared.windows.first?.safeAreaInsets ?? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+    
+    func navigationBarColor(backgroundColor: UIColor, tintColor: UIColor,titleFontName:String? = nil ,largeTitleFontName:String? = nil) -> some View {
+        self.modifier(NavigationBarCustom(backgroundColor: backgroundColor, tintColor: tintColor,titleFontName: titleFontName,largeTitleFontName: largeTitleFontName))
+    }
 }

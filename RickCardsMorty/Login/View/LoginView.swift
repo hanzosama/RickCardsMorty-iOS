@@ -15,7 +15,7 @@ struct LoginView: View {
     var body: some View {
         
         ZStack{ // Is better to use ZStack for Background colors∫
-            Color("loginBgColor").ignoresSafeArea()
+            Color("generalBgColor").ignoresSafeArea()
             VStack{
                 Image("rickIcon")
                     .resizable()
@@ -24,14 +24,19 @@ struct LoginView: View {
                     .padding()
                     .shadow(color: Color.black.opacity(0.3), radius: 25, x: 0, y: 0)
                 ActivityIndicator(show: $authViewModel.loading)
-                    .padding(.all, 100)
+                    .padding(.horizontal, 150)
+                Text("Please sign on with:")
+                    .font(Font.custom("ChalkboardSE-Regular", size: 20))
+                    .foregroundColor(Color.black)
+                    .padding(.vertical, 30)
                 SignInButton(){ //This is the target closure in the custom view
                     authViewModel.signIn()
                 }
                 .padding(.horizontal, 60)
                 
             }
-        }.onAppear{
+        }
+        .onAppear{
             authViewModel.restorePreviousSession()
         }
         

@@ -14,6 +14,7 @@
 		572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE52E26F01319007F1AEF /* CharacterService.swift */; };
 		572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE53126FBC893007F1AEF /* HomeViewModel.swift */; };
 		574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5526FCDC8D00FC47CF /* View+Extension.swift */; };
+		574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
@@ -25,7 +26,7 @@
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
 		578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */; };
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
-		57E7091326EAC23B005243F1 /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CardRow.swift */; };
+		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
 		AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		572BE52E26F01319007F1AEF /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		572BE53126FBC893007F1AEF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		574A3F5526FCDC8D00FC47CF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCustom.swift; sourceTree = "<group>"; };
 		57539F4826DD6E7300BFC63F /* RickCardsMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickCardsMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCardsMortyApp.swift; sourceTree = "<group>"; };
 		57539F4D26DD6E7300BFC63F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		57E7091226EAC23A005243F1 /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
+		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,10 +185,10 @@
 				578CAC7B26DD95B70062DA31 /* Login */,
 				5768F35026E0378C00D35C07 /* Utils */,
 				57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */,
+				5768F35326E047C400D35C07 /* EntryView.swift */,
 				57539F4F26DD6E7500BFC63F /* Assets.xcassets */,
 				57539F5426DD6E7500BFC63F /* Info.plist */,
 				57539F5126DD6E7500BFC63F /* Preview Content */,
-				5768F35326E047C400D35C07 /* EntryView.swift */,
 			);
 			path = RickCardsMorty;
 			sourceTree = "<group>";
@@ -223,6 +225,7 @@
 				57E7091826EAC723005243F1 /* TestPlayground.playground */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
+				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -267,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				57E7091026EAC10F005243F1 /* HomeView.swift */,
-				57E7091226EAC23A005243F1 /* CardRow.swift */,
+				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -531,7 +534,7 @@
 				57E7091626EAC275005243F1 /* Character.swift in Sources */,
 				578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */,
 				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
-				57E7091326EAC23B005243F1 /* CardRow.swift in Sources */,
+				57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */,
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
 				57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
@@ -541,6 +544,7 @@
 				572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */,
 				572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */,
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
+				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

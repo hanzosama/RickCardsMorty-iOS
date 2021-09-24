@@ -13,8 +13,10 @@ struct EntryView: View {
         switch authViewModel.sessionState {
         case .signedIn :
             HomeView()
+                .transition(.slide)            
         case .signedOut:
             LoginView()
+                .transition(.slide)
         }
     }
 }
