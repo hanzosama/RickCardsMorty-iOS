@@ -11,8 +11,12 @@ import Combine
 enum CharacterRequest: Request{
     case all(page:Int)
     
+    case name(name:String,page:Int)
+    
     var path: String {
         switch self {
+        case .name(_,_):
+            fallthrough
         case .all(_):
             return "character"
         }
@@ -21,6 +25,8 @@ enum CharacterRequest: Request{
     var method: HTTPMethod {
         switch self {
         case .all(_):
+            fallthrough
+        case .name(_,_):
             return .GET
         }
     }
@@ -29,12 +35,17 @@ enum CharacterRequest: Request{
         switch self {
         case .all(let page):
             return .url(["page":page])
+        case .name(let name, let page):
+            return .url(["page":page,
+                         "name":name])
         }
     }
     
     var headers: HTTPHeadersParams?{
         switch self {
         case .all(_):
+            fallthrough
+        case .name(_,_):
             return [:]
         }
     }
@@ -42,6 +53,8 @@ enum CharacterRequest: Request{
     var responseDataType: DataType{
         switch self {
         case .all(_):
+            fallthrough
+        case .name(_,_):
             return .Json
         }
     }
@@ -50,6 +63,7 @@ enum CharacterRequest: Request{
 
 protocol CharacterServiceProtocol {
     func fectchCharaters(at index:Int) -> AnyPublisher<CharacterResponse,RequestError>
+    func fectchCharaters(like name:String,at index:Int) -> AnyPublisher<CharacterResponse,RequestError>
 }
 
 class CharacterService : CharacterServiceProtocol  {
@@ -62,6 +76,11 @@ class CharacterService : CharacterServiceProtocol  {
     
     func fectchCharaters(at index:Int) -> AnyPublisher<CharacterResponse,RequestError>{
         let request = CharacterRequest.all(page: index)
+        return self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+    }
+    
+    func fectchCharaters(like name: String, at index:Int) -> AnyPublisher<CharacterResponse, RequestError> {
+        let request = CharacterRequest.name(name: name,page: index)
         return self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
     }
     

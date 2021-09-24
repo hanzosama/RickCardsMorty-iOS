@@ -11,6 +11,11 @@ import Combine
 class HomeViewModel: ObservableObject{
     @Published var characters = [Character]()
     @Published var isLoadingPage = false
+    @Published var queryString = ""
+    @Published var isEditing = false
+    
+    var subscription: Set<AnyCancellable> = []
+    
     private var currentPage = 1
     private var canLoadMorePages = true
     
@@ -18,6 +23,18 @@ class HomeViewModel: ObservableObject{
     
     init(service: CharacterServiceProtocol) {
         self.service = service
+        $queryString.debounce(for: .milliseconds(800), scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
+            .removeDuplicates()
+            .map({ [weak self] (string) -> Void in
+                if string.count < 1 {
+                    self?.reset()
+                }
+            }).sink(receiveValue: {  [weak self] _ in
+                self?.reset()
+                self?.loadCharacters()
+                self?.isEditing = false
+            })
+            .store(in: &subscription)
     }
     
     func loadMoreCharacteres(currentCharater item: Character){
@@ -36,20 +53,62 @@ class HomeViewModel: ObservableObject{
         
         isLoadingPage = true
         
-        service.fectchCharaters(at: currentPage)
-            .receive(on: DispatchQueue.main)
-            .handleEvents(receiveOutput:{ response in
-                self.canLoadMorePages = self.currentPage < response.info.pages
-                self.isLoadingPage = false
-                self.currentPage += 1
-            })
-            .map { reponse in
-                //adding the object to the publisher
-                return self.characters + reponse.results
-            }.catch { _ in
-                //Transfort in object insted of handling the error
-                Just([])
-            }.assign(to: &$characters)
+        if queryString.isEmpty {
+            
+            service.fectchCharaters(at: currentPage)
+                .receive(on: DispatchQueue.main)
+                .handleEvents(receiveOutput:{ response in
+                    self.canLoadMorePages = self.currentPage < response.info.pages
+                    self.isLoadingPage = false
+                    self.currentPage += 1
+                },receiveCompletion: { complation in
+                    switch complation{
+                    case .failure(_):
+                        fallthrough
+                    case .finished:
+                        self.isLoadingPage = false
+                        
+                    }
+                })
+                .map { reponse in
+                    //adding the object to the publisher
+                    return self.characters + reponse.results
+                }.catch { _ in
+                    //Transfort in object insted of handling the error
+                    Just([])
+                }.assign(to: &$characters)
+        }else{
+            
+            service.fectchCharaters(like: queryString, at: currentPage)
+                .receive(on: DispatchQueue.main)
+                .handleEvents(receiveOutput:{ response in
+                    self.canLoadMorePages = self.currentPage < response.info.pages
+                    self.currentPage += 1
+                },receiveCompletion: { complation in
+                    switch complation{
+                    case .failure(_):
+                        fallthrough
+                    case .finished:
+                        self.isLoadingPage = false
+                        
+                    }
+                })
+                .map { reponse in
+                    //adding the object to the publisher
+                    return self.characters + reponse.results
+                }.catch { _ in
+                    //Transfort in object insted of handling the error
+                    Just([])
+                }.assign(to: &$characters)
+        }
+        
+    }
+    
+    func reset(){
+        
+        self.canLoadMorePages = true
+        self.currentPage = 1
+        self.characters.removeAll()
         
     }
     

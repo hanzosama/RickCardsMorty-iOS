@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import SwiftUIX
 
 struct HomeView: View {
     //TODO: Handle the injection later
     @StateObject var viewModel = HomeViewModel(service: CharacterService())
     @EnvironmentObject var authViewModel : AuthenticationViewModel
     @Environment(\.mainFont) var mainFont
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var scrollViewOffset:CGFloat = 0
     @State private var startScrollViewOffset:CGFloat = 0
+    
     private var scrollTreshold:CGFloat = 450.0
     private var topID = "ScrollTop"
     private var bgColor = Color("generalBgColor")
@@ -75,10 +78,37 @@ struct HomeView: View {
                             .animation(.easeInOut)
                             ,alignment: .bottomTrailing
                         )
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
+                        .navigationSearchBar {
+                            //This is a custom search bar from SwiftUIX
+                            SearchBar("Search Friends",
+                                      text: $viewModel.queryString,
+                                      isEditing: $viewModel.isEditing) {
+                                // Do something on enter
+                                viewModel.reset()
+                                viewModel.loadCharacters()
+                            }
+                            .onCancel {
+                                // Do something on cancel
+                                viewModel.reset()
+                                viewModel.queryString = ""
+                                viewModel.loadCharacters()
+                                withAnimation(.spring()) {
+                                    proxy.scrollTo(topID,anchor: .top)
+                                }
+                                
+                            }
+                            .textFieldBackgroundColor(colorScheme == .light ? .white : .clear)
+                            .searchBarStyle(.default)
+                            
+                        }
                         
                     }
                 }
-                .navigationTitle("Rick&Morty Characters")
+                
+                .navigationTitle("RickCardsMorty")
                 .navigationBarItems(trailing:
                                         HStack {
                                             Button(action: {
@@ -98,6 +128,7 @@ struct HomeView: View {
                 )
                 
             }
+            
             .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .white, titleFontName: mainFont, largeTitleFontName: mainFont)
             .navigationViewStyle(StackNavigationViewStyle())
             .onAppear{
@@ -106,6 +137,15 @@ struct HomeView: View {
             
             ActivityIndicator(show: $viewModel.isLoadingPage)
                 .padding(.all, 150)
+            
+            if !viewModel.isEditing {
+                GeometryReader{ geometry -> Color in //Little trick to handle the keyboard
+                    hideKeyboard()
+                    return Color.clear //Just to conform Content required
+                }
+                .frame(width: 0, height: 0)
+            }
+            
         }
         
     }
@@ -116,7 +156,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         
-        HomeView()
+        HomeView().environment(\.colorScheme, .dark)
     }
 }
 

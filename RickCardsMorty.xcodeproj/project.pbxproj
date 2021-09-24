@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */; };
 		574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5926FE18FD00FC47CF /* ImageLoader.swift */; };
 		574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5B26FE58B900FC47CF /* Environment.swift */; };
+		574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 574A3F6026FE7C5800FC47CF /* SwiftUIX */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */,
+				574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +319,9 @@
 			dependencies = (
 			);
 			name = RickCardsMorty;
+			packageProductDependencies = (
+				574A3F6026FE7C5800FC47CF /* SwiftUIX */,
+			);
 			productName = RickCardsMorty;
 			productReference = 57539F4826DD6E7300BFC63F /* RickCardsMorty.app */;
 			productType = "com.apple.product-type.application";
@@ -391,6 +396,9 @@
 				Base,
 			);
 			mainGroup = 57539F3F26DD6E7300BFC63F;
+			packageReferences = (
+				574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 57539F4926DD6E7300BFC63F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -878,6 +886,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		574A3F6026FE7C5800FC47CF /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57539F4026DD6E7300BFC63F /* Project object */;
 }
