@@ -16,6 +16,7 @@
 		574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5526FCDC8D00FC47CF /* View+Extension.swift */; };
 		574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */; };
 		574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5926FE18FD00FC47CF /* ImageLoader.swift */; };
+		574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5B26FE58B900FC47CF /* Environment.swift */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		574A3F5526FCDC8D00FC47CF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCustom.swift; sourceTree = "<group>"; };
 		574A3F5926FE18FD00FC47CF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		574A3F5B26FE58B900FC47CF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		57539F4826DD6E7300BFC63F /* RickCardsMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickCardsMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCardsMortyApp.swift; sourceTree = "<group>"; };
 		57539F4D26DD6E7300BFC63F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
 				574A3F5926FE18FD00FC47CF /* ImageLoader.swift */,
+				574A3F5B26FE58B900FC47CF /* Environment.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
+				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

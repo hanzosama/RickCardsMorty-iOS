@@ -11,6 +11,7 @@ struct HomeView: View {
     //TODO: Handle the injection later
     @StateObject var viewModel = HomeViewModel(service: CharacterService())
     @EnvironmentObject var authViewModel : AuthenticationViewModel
+    @Environment(\.mainFont) var mainFont
     
     @State private var scrollViewOffset:CGFloat = 0
     @State private var startScrollViewOffset:CGFloat = 0
@@ -97,7 +98,7 @@ struct HomeView: View {
                 )
                 
             }
-            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .white, titleFontName: "ChalkboardSE-Regular", largeTitleFontName: "ChalkboardSE-Regular")
+            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .white, titleFontName: mainFont, largeTitleFontName: mainFont)
             .navigationViewStyle(StackNavigationViewStyle())
             .onAppear{
                 viewModel.loadCharacters()

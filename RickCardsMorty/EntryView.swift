@@ -9,11 +9,12 @@ import SwiftUI
 
 struct EntryView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @Environment(\.mainFont) var mainFont
     var body: some View {
         switch authViewModel.sessionState {
         case .signedIn :
             HomeView()
-                .transition(.slide)            
+                .transition(.slide)
         case .signedOut:
             LoginView()
                 .transition(.slide)

@@ -12,10 +12,16 @@ struct CharacterResponse: Decodable{
     var results:[Character]
 }
 
+enum CharacterStatus: String, Decodable {
+    case alive = "Alive"
+    case unknown = "unknown"
+    case dead = "Dead"
+}
+
 struct Character: Decodable  {
     var id:Int
     var name:String
-    var status:String
+    var status:CharacterStatus
     var species:String
     var gender:String
     var imageUrl:String
@@ -23,12 +29,12 @@ struct Character: Decodable  {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case status
+        case status = "status"
         case imageUrl = "image"
         case species
         case gender
     }
-
+    
 }
 
 struct Info: Decodable {

@@ -15,20 +15,6 @@ public enum RequestError:String, Error{
     
 }
 
-public struct NetworkingEnvironment {
-    public var name:String
-    public var host:String
-    public var baseURL:String
-    public var headers:[String:Any] = [:]
-    public var cachePolicy: URLRequest.CachePolicy  = .reloadIgnoringLocalAndRemoteCacheData
-    
-    public init(_ name: String, host: String, baseURL:String) {
-        self.name = name
-        self.host = host
-        self.baseURL = baseURL
-    }
-}
-
 public protocol Dispatcher {
     
     init(environment:NetworkingEnvironment)
