@@ -32,11 +32,13 @@ struct HomeView: View {
                         ScrollView {
                             LazyVStack{
                                 ForEach(viewModel.characters, id: \.id) { character in
-                                    CharacterCardRow(character)
-                                        .onAppear {
-                                            viewModel.loadMoreCharacteres(currentCharater: character)
-                                        }
-                                        .padding(.all,10)
+                                    NavigationLink(destination:CharacterDetail(character:character)) {
+                                        CharacterCardRow(character)
+                                            .onAppear {
+                                                viewModel.loadMoreCharacteres(currentCharater: character)
+                                            }
+                                            .padding(.all,10)
+                                    }
                                 }
                             }
                             .id(topID)

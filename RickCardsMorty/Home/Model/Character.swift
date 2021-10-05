@@ -42,6 +42,7 @@ struct Character: Decodable  {
     var imageUrl:String
     var origin:CharacterOrigin
     var location:CharacterLocation
+    var episode:[String]
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -52,8 +53,25 @@ struct Character: Decodable  {
         case gender = "gender"
         case origin = "origin"
         case location = "location"
+        case episode = "episode"
     }
     
+}
+
+
+struct Episode: Decodable {
+    var id:Int
+    var name:String
+    var episode:String
+    var airDate:String
+    var charactersURL:[String]
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case name = "name"
+        case episode = "episode"
+        case airDate = "air_date"
+        case charactersURL = "characters"
+    }
 }
 
 struct Info: Decodable {

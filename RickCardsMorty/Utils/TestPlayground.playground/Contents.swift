@@ -38,3 +38,10 @@ let _ = Future<Int,Error> //Simple publisher handling error
 .sink { transformedValue in
     print("The end value is \(transformedValue)")
 }
+
+
+var url = "https://rickandmortyapi.com/api/episode/1"
+url.split(separator: "/").last
+
+let ids = [1,2,3]
+print(ids.description)

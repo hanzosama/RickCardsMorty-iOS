@@ -28,6 +28,9 @@
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
 		578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */; };
+		57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetail.swift */; };
+		57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeRequest.swift */; };
+		57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */; };
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
@@ -79,6 +82,9 @@
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		57E4953F270B929A00BF3D16 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		57E49541270B999900BF3D16 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
+		57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				572BE52E26F01319007F1AEF /* CharacterService.swift */,
+				57E49541270B999900BF3D16 /* EpisodeRequest.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				572BE53126FBC893007F1AEF /* HomeViewModel.swift */,
+				57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 			children = (
 				57E7091026EAC10F005243F1 /* HomeView.swift */,
 				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
+				57E4953F270B929A00BF3D16 /* CharacterDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */,
 				57E7091626EAC275005243F1 /* Character.swift in Sources */,
 				578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */,
 				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
@@ -561,6 +571,8 @@
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
+				57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */,
+				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

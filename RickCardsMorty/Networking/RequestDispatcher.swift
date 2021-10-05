@@ -78,6 +78,9 @@ public class RequestDispatcher: Dispatcher {
             }
             
         case .url(let params):
+            if params.isEmpty {
+                break
+            }
             //URL Quey String
             guard var components = URLComponents(string: completeUrl) else {
                 throw RequestError.badInputData

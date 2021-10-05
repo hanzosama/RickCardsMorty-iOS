@@ -103,7 +103,7 @@ struct CharacterCardRow: View {
 
 struct CharacterCardRow_Previews: PreviewProvider {
     static var previews: some View {
-        let character = Character(id: 1, name: "Rick", status: .alive, species: "Human", gender: .unknown, imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",origin: .init(name: "Earth"), location: .init(name: "Earth C-132"))
+        let character = Character(id: 1, name: "Rick", status: .alive, species: "Human", gender: .unknown, imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",origin: .init(name: "Earth"), location: .init(name: "Earth C-132"),episode: [])
         CharacterCardRow(character)
             .preferredColorScheme(.light)
     }
