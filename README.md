@@ -1,4 +1,15 @@
 # RickCardsMorty
 This is a lab of SwiftUI using the free API *https://rickandmortyapi.com/*
+
+### Features
+
+* Google Authentication
+* SwiftUI
+* Combine
+* Dark/Light mode
+* Search Bar
+
+
 ## Demo
-![](rickandmortydemo.gif) 
+
+<img src="rickandmortydemo.gif" width="200" height="400" /> 
