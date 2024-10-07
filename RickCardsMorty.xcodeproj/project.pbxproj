@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35446C4649EE8283F5C3C79E /* Pods_RickCardsMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */; };
-		3EC0603EDF20183603059D50 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */; };
 		572B4AB626EFE66B000D9410 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB526EFE66B000D9410 /* Request.swift */; };
 		572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB726EFE863000D9410 /* RequestDispatcher.swift */; };
 		572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE52E26F01319007F1AEF /* CharacterService.swift */; };
@@ -17,7 +15,6 @@
 		574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */; };
 		574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5926FE18FD00FC47CF /* ImageLoader.swift */; };
 		574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5B26FE58B900FC47CF /* Environment.swift */; };
-		574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 574A3F6026FE7C5800FC47CF /* SwiftUIX */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
@@ -34,7 +31,12 @@
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
-		AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */; };
+		AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = AF0043262CB4697D00817EDB /* SwiftUIX */; };
+		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
+		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
+		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
+		AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */; };
+		AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.release.xcconfig"; sourceTree = "<group>"; };
 		572B4AB526EFE66B000D9410 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		572B4AB726EFE863000D9410 /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
 		572BE52E26F01319007F1AEF /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
@@ -89,13 +89,6 @@
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.release.xcconfig"; sourceTree = "<group>"; };
-		5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMorty_RickCardsMortyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMortyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +96,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */,
-				574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */,
+				AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */,
+				AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */,
+				AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */,
+				AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */,
+				AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */,
+				AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35446C4649EE8283F5C3C79E /* Pods_RickCardsMortyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,26 +116,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC0603EDF20183603059D50 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ACD7F415DDEDAD584013AB7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */,
-				5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */,
-				C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */,
-				AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */,
-				1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */,
-				1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		572B4AB326EFE639000D9410 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,8 +157,7 @@
 				57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */,
 				57539F6726DD6E7500BFC63F /* RickCardsMortyUITests */,
 				57539F4926DD6E7300BFC63F /* Products */,
-				0ACD7F415DDEDAD584013AB7 /* Pods */,
-				75C35BFF6BDBF0424C1C7775 /* Frameworks */,
+				AFB16EB92CB46CA400C6E783 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,12 +281,9 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		75C35BFF6BDBF0424C1C7775 /* Frameworks */ = {
+		AFB16EB92CB46CA400C6E783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */,
-				5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */,
-				6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,11 +295,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57539F6D26DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMorty" */;
 			buildPhases = (
-				C92A19A7637C8037B9FCE14D /* [CP] Check Pods Manifest.lock */,
 				57539F4426DD6E7300BFC63F /* Sources */,
 				57539F4526DD6E7300BFC63F /* Frameworks */,
 				57539F4626DD6E7300BFC63F /* Resources */,
-				FFA0BF2CE483572D361E5A9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,7 +305,12 @@
 			);
 			name = RickCardsMorty;
 			packageProductDependencies = (
-				574A3F6026FE7C5800FC47CF /* SwiftUIX */,
+				AF0043262CB4697D00817EDB /* SwiftUIX */,
+				AFB16EB22CB46B5600C6E783 /* FirebaseAuth */,
+				AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */,
+				AFB16EB62CB46B5600C6E783 /* FirebaseCore */,
+				AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */,
+				AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */,
 			);
 			productName = RickCardsMorty;
 			productReference = 57539F4826DD6E7300BFC63F /* RickCardsMorty.app */;
@@ -339,7 +320,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57539F7026DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyTests" */;
 			buildPhases = (
-				AD3D6E47269119E3B1BBF331 /* [CP] Check Pods Manifest.lock */,
 				57539F5526DD6E7500BFC63F /* Sources */,
 				57539F5626DD6E7500BFC63F /* Frameworks */,
 				57539F5726DD6E7500BFC63F /* Resources */,
@@ -358,11 +338,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57539F7326DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyUITests" */;
 			buildPhases = (
-				41183BCEDDC28E968363B5DC /* [CP] Check Pods Manifest.lock */,
 				57539F6026DD6E7500BFC63F /* Sources */,
 				57539F6126DD6E7500BFC63F /* Frameworks */,
 				57539F6226DD6E7500BFC63F /* Resources */,
-				C91294FDF0EA684F6BB1F7A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,6 +385,8 @@
 			mainGroup = 57539F3F26DD6E7300BFC63F;
 			packageReferences = (
 				574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 57539F4926DD6E7300BFC63F /* Products */;
 			projectDirPath = "";
@@ -445,109 +425,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		41183BCEDDC28E968363B5DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMorty-RickCardsMortyUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD3D6E47269119E3B1BBF331 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMortyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C91294FDF0EA684F6BB1F7A0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C92A19A7637C8037B9FCE14D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMorty-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFA0BF2CE483572D361E5A9C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57539F4426DD6E7300BFC63F /* Sources */ = {
@@ -726,7 +603,6 @@
 		};
 		57539F6E26DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -749,7 +625,6 @@
 		};
 		57539F6F26DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -772,7 +647,6 @@
 		};
 		57539F7126DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -795,7 +669,6 @@
 		};
 		57539F7226DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -818,7 +691,6 @@
 		};
 		57539F7426DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -839,7 +711,6 @@
 		};
 		57539F7526DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -904,17 +775,58 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
+				kind = exactVersion;
+				version = 0.2.3;
+			};
+		};
+		AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 11.3.0;
+			};
+		};
+		AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 8.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		574A3F6026FE7C5800FC47CF /* SwiftUIX */ = {
+		AF0043262CB4697D00817EDB /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		AFB16EB22CB46B5600C6E783 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		AFB16EB62CB46B5600C6E783 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -4,8 +4,8 @@
 //
 //  Created by HanzoMac on 30/08/21.
 //
-
-import Firebase
+import FirebaseCore
+import FirebaseAuth
 import GoogleSignIn
 import Combine
 
@@ -26,17 +26,19 @@ class AuthenticationViewModel: ObservableObject {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         // Create Google Sign In configuration object.
         self.configuration = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = configuration
+        
     }
     
     func signIn(){
         loading = true
         if GIDSignIn.sharedInstance.currentUser == nil, let configuration = configuration {
             // TODO: Not force rootView
-            GIDSignIn.sharedInstance.signIn(with: configuration, presenting: (UIApplication.shared.windows.first?.rootViewController)!) { googleUser, error in
-                if error == nil , let user = googleUser {
-                    self.firebaseAuthentication(user: user)
-                }else{
-                    // Handle error
+            GIDSignIn.sharedInstance.signIn(withPresenting: (UIApplication.shared.windows.first?.rootViewController)!) { signInResult, error in
+                if error == nil, let result = signInResult {
+                    self.firebaseAuthentication(user: result.user)
+                } else {
+                    //TODO: Handle error
                     print("There was an error sing in google")
                 }
                 self.loading = false
@@ -65,8 +67,8 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     private func firebaseAuthentication(user: GIDGoogleUser){
-        if let idToken = user.authentication.idToken {
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.authentication.accessToken)
+        if let idToken = user.idToken {
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: user.accessToken.tokenString)
             Auth.auth().signIn(with: credential) { _, error in
                 if let error = error {
                     print(error.localizedDescription)
