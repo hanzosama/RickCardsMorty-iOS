@@ -37,6 +37,9 @@
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
 		AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */; };
 		AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */; };
+		AFE766B12CB4977900D3394F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AFE766B02CB4977900D3394F /* ComposableArchitecture */; };
+		AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE766B42CB49D5E00D3394F /* LoginFeature.swift */; };
+		AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,8 @@
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
+		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 			files = (
 				AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */,
 				AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */,
+				AFE766B12CB4977900D3394F /* ComposableArchitecture in Frameworks */,
 				AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */,
 				AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */,
 				AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */,
@@ -152,6 +158,7 @@
 		57539F3F26DD6E7300BFC63F = {
 			isa = PBXGroup;
 			children = (
+				AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */,
 				57539F7626DD717C00BFC63F /* GoogleService-Info.plist */,
 				57539F4A26DD6E7300BFC63F /* RickCardsMorty */,
 				57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */,
@@ -259,6 +266,7 @@
 			children = (
 				57539F4D26DD6E7300BFC63F /* LoginView.swift */,
 				578CAC7C26DD95D50062DA31 /* SignInButton.swift */,
+				AFE766B42CB49D5E00D3394F /* LoginFeature.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,10 +306,12 @@
 				57539F4426DD6E7300BFC63F /* Sources */,
 				57539F4526DD6E7300BFC63F /* Frameworks */,
 				57539F4626DD6E7300BFC63F /* Resources */,
+				AFE766B32CB4995000D3394F /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AFE766B72CB49E7A00D3394F /* PBXTargetDependency */,
 			);
 			name = RickCardsMorty;
 			packageProductDependencies = (
@@ -311,6 +321,7 @@
 				AFB16EB62CB46B5600C6E783 /* FirebaseCore */,
 				AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */,
 				AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */,
+				AFE766B02CB4977900D3394F /* ComposableArchitecture */,
 			);
 			productName = RickCardsMorty;
 			productReference = 57539F4826DD6E7300BFC63F /* RickCardsMorty.app */;
@@ -358,8 +369,9 @@
 		57539F4026DD6E7300BFC63F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					57539F4726DD6E7300BFC63F = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -387,6 +399,8 @@
 				574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 57539F4926DD6E7300BFC63F /* Products */;
 			projectDirPath = "";
@@ -404,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */,
 				57539F5326DD6E7500BFC63F /* Preview Assets.xcassets in Resources */,
 				57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */,
 				57539F7726DD717C00BFC63F /* GoogleService-Info.plist in Resources */,
@@ -425,6 +440,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFE766B32CB4995000D3394F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57539F4426DD6E7300BFC63F /* Sources */ = {
@@ -451,6 +488,7 @@
 				57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */,
 				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
+				AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +519,10 @@
 			isa = PBXTargetDependency;
 			target = 57539F4726DD6E7300BFC63F /* RickCardsMorty */;
 			targetProxy = 57539F6526DD6E7500BFC63F /* PBXContainerItemProxy */;
+		};
+		AFE766B72CB49E7A00D3394F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = AFE766B62CB49E7A00D3394F /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -522,6 +564,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -583,6 +626,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -795,6 +839,22 @@
 				version = 8.0.0;
 			};
 		};
+		AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.15.0;
+			};
+		};
+		AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -827,6 +887,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		AFE766B02CB4977900D3394F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		AFE766B62CB49E7A00D3394F /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
