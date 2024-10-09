@@ -4,6 +4,7 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
  # - comma
   - control_statement
   - trailing_whitespace
+  - empty_parentheses_with_trailing_closure
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # find all the available rules by running: `swiftlint rules`
 
@@ -31,10 +32,10 @@ allow_zero_lintable_files: false
 strict: false
 
 # The path to a baseline file, which will be used to filter out detected violations.
-baseline: Baseline.json
+#baseline: Baseline.json
 
 # The path to save detected violations to as a new baseline.
-write_baseline: Baseline.json
+#write_baseline: Baseline.json
 
 # If true, SwiftLint will check for updates after linting or analyzing.
 check_for_updates: true
@@ -46,7 +47,7 @@ force_try:
   severity: warning # explicitly
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
-line_length: 110
+line_length: 180
 # they can set both implicitly with an array
 type_body_length:
   - 300 # warning

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+
+import ComposableArchitecture
 import GoogleSignIn
 import Firebase
 
@@ -14,8 +16,6 @@ struct RickCardsMortyApp: App {
     
     @Environment(\.scenePhase) private var scenePhase // To handle phases instead of entirey app lifecycle
     
-    @StateObject var viewModel = AuthenticationViewModel()
-    
     init() {
         // This constructur is better to setup initial states that does not depend of App life cycle
         setupAuthentication()
@@ -23,11 +23,15 @@ struct RickCardsMortyApp: App {
     // Main entry point in swiftUI life cycle, notice how the protocol return a Scene, not a View
     var body: some Scene {
         WindowGroup { // This is a cross-platform struct that represents a scene of multiple window
-            EntryView()
-                .environmentObject(viewModel)
-                .onOpenURL { url in
-                    GIDSignIn.sharedInstance.handle(url)
-                }
+            EntryView(
+                store: Store(
+                    initialState: EntryViewFeature.State(),
+                    reducer: EntryViewFeature.init
+                )
+            )
+            .onOpenURL { url in
+                GIDSignIn.sharedInstance.handle(url)
+            }
         }
         .onChange(of: scenePhase) { phase in // This is just for knowledge purposes
             switch phase {

@@ -7,27 +7,21 @@
 
 import SwiftUI
 
+import ComposableArchitecture
+
 struct EntryView: View {
-    @EnvironmentObject var authViewModel: AuthenticationViewModel
     @Environment(\.mainFont) var mainFont
+    @Dependency(\.authenticationManager) var authenticationManager
+    
+    let store: StoreOf<EntryViewFeature>
+    
     var body: some View {
-        switch authViewModel.sessionState {
-        case .signedIn :
+        if authenticationManager.isLoggedIn() {
             HomeView()
                 .transition(.slide)
-        case .signedOut:
-            LoginView()
+        } else {
+            LoginView(store: self.store.scope(state: \.login, action: \.login))
                 .transition(.slide)
         }
     }
 }
-
-#if DEBUG
-
-struct EntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        EntryView()
-    }
-}
-
-#endif

@@ -9,42 +9,41 @@ import SwiftUI
 import SwiftUIX
 
 struct HomeView: View {
-    //TODO: Handle the injection later
+    // TODO: Handle the injection later
     @StateObject var viewModel = HomeViewModel(service: CharacterService())
-    @EnvironmentObject var authViewModel : AuthenticationViewModel
     @Environment(\.mainFont) var mainFont
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var scrollViewOffset:CGFloat = 0
-    @State private var startScrollViewOffset:CGFloat = 0
+    @State private var scrollViewOffset: CGFloat = 0
+    @State private var startScrollViewOffset: CGFloat = 0
     
-    private var scrollTreshold:CGFloat = 450.0
+    private var scrollTreshold: CGFloat = 450.0
     private var topID = "ScrollTop"
     private var bgColor = Color("generalBgColor")
     
     var body: some View {
         ZStack { // This is due to issue with the Activity indicator navigation
-            NavigationView{
-                ZStack{
+            NavigationView {
+                ZStack {
                     bgColor.ignoresSafeArea()
                     
-                    ScrollViewReader{ proxy in // To handle the scroll movement
+                    ScrollViewReader { proxy in // To handle the scroll movement
                         ScrollView {
-                            LazyVStack{
+                            LazyVStack {
                                 ForEach(viewModel.characters, id: \.id) { character in
-                                    NavigationLink(destination:CharacterDetail(character:character)) {
+                                    NavigationLink(destination: CharacterDetail(character: character)) {
                                         CharacterCardRow(character)
                                             .onAppear {
                                                 viewModel.loadMoreCharacteres(currentCharater: character)
                                             }
-                                            .padding(.all,10)
+                                            .padding(.all, 10)
                                     }
                                 }
                             }
                             .id(topID)
                             .overlay(
                                 // Calculating Scrollview Offset
-                                GeometryReader{ geometry -> Color in
+                                GeometryReader { geometry -> Color in
                                     DispatchQueue.main.async {
                                         let offset = geometry.frame(in: .global).minY
                                         if startScrollViewOffset == 0 {
@@ -53,16 +52,16 @@ struct HomeView: View {
                                         self.scrollViewOffset = offset - startScrollViewOffset
                                         
                                     }
-                                    return Color.clear //Just to conform Content required
+                                    return Color.clear // Just to conform Content required
                                 }
                                 .frame(width: 0, height: 0)
-                                ,alignment: .top
+                                , alignment: .top
                             )
                         }
                         .overlay(
-                            Button(action: { //Movement animation
+                            Button(action: { // Movement animation
                                 withAnimation(.spring()) {
-                                    proxy.scrollTo(topID,anchor: .top)
+                                    proxy.scrollTo(topID, anchor: .top)
                                 }
                             }, label: {
                                 Image(systemName: "arrow.up")
@@ -75,16 +74,16 @@ struct HomeView: View {
                             })
                             .padding(.trailing)
                             .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0)
-                            //Hide or show the button according to the scrolloffset
+                            // Hide or show the button according to the scrolloffset
                             .opacity(-scrollViewOffset > scrollTreshold ? 1 : 0)
                             .animation(.easeInOut)
-                            ,alignment: .bottomTrailing
+                            , alignment: .bottomTrailing
                         )
                         .onTapGesture {
                             hideKeyboard()
                         }
                         .navigationSearchBar {
-                            //This is a custom search bar from SwiftUIX
+                            // This is a custom search bar from SwiftUIX
                             SearchBar("Search Friends",
                                       text: $viewModel.queryString,
                                       isEditing: $viewModel.isEditing) {
@@ -98,7 +97,7 @@ struct HomeView: View {
                                 viewModel.queryString = ""
                                 viewModel.loadCharacters()
                                 withAnimation(.spring()) {
-                                    proxy.scrollTo(topID,anchor: .top)
+                                    proxy.scrollTo(topID, anchor: .top)
                                 }
                                 
                             }
@@ -115,11 +114,12 @@ struct HomeView: View {
                                         HStack {
                                             Button(action: {
                                                 withAnimation {
-                                                    authViewModel.signOut()
+                                                    // TODO: logout TCA
+                                                    // authViewModel.signOut()
                                                 }
                                             }, label: {
                                                 Image(systemName: "arrow.forward")
-                                                    .frame(width: 60,height: 30)
+                                                    .frame(width: 60, height: 30)
                                                     .background(Color.red)
                                                     .cornerRadius(5)
                                                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
@@ -130,10 +130,9 @@ struct HomeView: View {
                 )
                 
             }
-            
-            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor:  .white, titleFontName: mainFont, largeTitleFontName: mainFont)
+            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor: .white, titleFontName: mainFont, largeTitleFontName: mainFont)
             .navigationViewStyle(StackNavigationViewStyle())
-            .onAppear{
+            .onAppear {
                 viewModel.loadCharacters()
             }
             
@@ -141,9 +140,9 @@ struct HomeView: View {
                 .padding(.all, 150)
             
             if !viewModel.isEditing {
-                GeometryReader{ geometry -> Color in //Little trick to handle the keyboard
+                GeometryReader { _ -> Color in // Little trick to handle the keyboard
                     hideKeyboard()
-                    return Color.clear //Just to conform Content required
+                    return Color.clear // Just to conform Content required
                 }
                 .frame(width: 0, height: 0)
             }

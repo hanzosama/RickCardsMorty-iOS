@@ -24,7 +24,6 @@
 		5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35126E037A300D35C07 /* ActivityIndicator.swift */; };
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
-		578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */; };
 		57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetail.swift */; };
 		57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeRequest.swift */; };
 		57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */; };
@@ -32,6 +31,8 @@
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
 		AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = AF0043262CB4697D00817EDB /* SwiftUIX */; };
+		AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */; };
+		AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */; };
 		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
 		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
@@ -84,7 +85,6 @@
 		5768F35126E037A300D35C07 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
-		578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		57E4953F270B929A00BF3D16 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
 		57E49541270B999900BF3D16 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
 		57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 			children = (
 				572BE52E26F01319007F1AEF /* CharacterService.swift */,
 				57E49541270B999900BF3D16 /* EpisodeRequest.swift */,
+				AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				578CAC7B26DD95B70062DA31 /* Login */,
 				5768F35026E0378C00D35C07 /* Utils */,
 				57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */,
+				AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */,
 				5768F35326E047C400D35C07 /* EntryView.swift */,
 				57539F4F26DD6E7500BFC63F /* Assets.xcassets */,
 				57539F5426DD6E7500BFC63F /* Info.plist */,
@@ -246,7 +250,6 @@
 		578CAC7E26DDAB080062DA31 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -470,7 +473,6 @@
 			files = (
 				57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */,
 				57E7091626EAC275005243F1 /* Character.swift in Sources */,
-				578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */,
 				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
 				57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */,
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
@@ -478,6 +480,7 @@
 				574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
 				572B4AB626EFE66B000D9410 /* Request.swift in Sources */,
+				AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */,
 				572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */,
 				578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */,
 				572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */,
@@ -488,6 +491,7 @@
 				57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */,
 				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
+				AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */,
 				AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

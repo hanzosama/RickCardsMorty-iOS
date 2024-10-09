@@ -43,7 +43,7 @@ enum EpisodeRequest: Request{
     var responseDataType: DataType{
         switch self {
         case .id(_):
-            return .Json
+            return .json
         }
     }
     
