@@ -7,7 +7,7 @@
 
 import Foundation
 
-import ComposableArchitecture
+import Dependencies
 import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
@@ -63,6 +63,7 @@ public struct AuthenticationManager {
     public func restorePreviousSession() async throws {
         print("Restoring the reprevious session..")
         try await GIDSignIn.sharedInstance.restorePreviousSignIn()
+        print("Session ok")
     }
     
     public func isLoggedIn() -> Bool {

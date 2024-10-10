@@ -67,6 +67,7 @@ struct LoginFeature {
                     try await authManager.restorePreviousSession()
                     await send(.signInSuccess)
                 } catch: { _, send in
+                    print("There was an error restoring the session")
                     await send(.signOut)
                 }
                 

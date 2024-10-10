@@ -16,12 +16,17 @@ struct EntryView: View {
     let store: StoreOf<EntryViewFeature>
     
     var body: some View {
-        if authenticationManager.isLoggedIn() {
-            HomeView()
-                .transition(.slide)
-        } else {
-            LoginView(store: self.store.scope(state: \.login, action: \.login))
-                .transition(.slide)
+        switch store.state {
+        case .home:
+            if let store = store.scope(state: \.home, action: \.home) {
+                HomeView(store: store)
+                    .transition(.slide)
+            }
+        case .login:
+            if let store = store.scope(state: \.login, action: \.login) {
+                LoginView(store: store)
+                    .transition(.slide)
+            }
         }
     }
 }

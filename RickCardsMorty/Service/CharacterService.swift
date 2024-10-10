@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+import Dependencies
+
 enum CharacterRequest: Request {
     case all(page: Int)
     
@@ -73,33 +75,40 @@ enum CharacterRequest: Request {
     
 }
 
-protocol CharacterServiceProtocol {
-    func fectchCharaters(at index: Int) -> AnyPublisher<CharacterResponse, RequestError>
-    func fectchCharaters(like name: String, at index: Int) -> AnyPublisher<CharacterResponse, RequestError>
-    func fectchCharaters(ids: [String]) -> AnyPublisher<[Character], RequestError>
-}
-
-class CharacterService: CharacterServiceProtocol {
-    
-    private var cancelable: Set<AnyCancellable> = []
+public struct CharacterService {
     
     var requestDispatcher: RequestDispatcher {
         RequestDispatcher(environment: .init("prod", host: "https://rickandmortyapi.com/", baseURL: "api/"))
     }
     
-    func fectchCharaters(at index: Int) -> AnyPublisher<CharacterResponse, RequestError> {
+    func fectchCharaters(at index: Int) async throws -> CharacterResponse {
         let request = CharacterRequest.all(page: index)
-        return self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+        return try await self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
     }
     
-    func fectchCharaters(like name: String, at index: Int) -> AnyPublisher<CharacterResponse, RequestError> {
+    func fectchCharaters(like name: String, at index: Int) async throws -> CharacterResponse {
         let request = CharacterRequest.name(name: name, page: index)
-        return self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+        return try await self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
     }
     
-    func fectchCharaters(ids: [String]) -> AnyPublisher<[Character], RequestError> {
+    func fectchCharaters(ids: [String]) async throws -> [Character] {
         let request = CharacterRequest.multiple(ids: ids)
-        return self.requestDispatcher.execute(request: request, reponseObject: [Character].self)
+        return try await self.requestDispatcher.execute(request: request, reponseObject: [Character].self)
     }
     
+}
+
+extension DependencyValues {
+    public var characterService: CharacterService {
+        get { self[CharacterService.self] }
+        set { self[CharacterService.self] = newValue }
+    }
+}
+
+extension CharacterService {
+    public static let live = CharacterService.init()
+}
+
+extension CharacterService: DependencyKey {
+    public static var liveValue = CharacterService.live
 }

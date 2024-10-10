@@ -10,48 +10,47 @@ import Combine
 import UIKit
 import SwiftUI
 
-class ImageLoader: ObservableObject{
+class ImageLoader: ObservableObject {
     
     @Published var image: UIImage?
     private var cancelable: AnyCancellable?
     private var url: URL?
     private var cache: ImageCache?
     private(set) var isLoading = false
-    //Taking care of the thread
+    // Taking care of the thread
     private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
-    
     
     init(stringUrl: String, cache: ImageCache? = nil) {
         self.url = URL(string: stringUrl)
         self.cache = cache
     }
     
-    func load(){
+    func load() {
         
         if let url = url {
             
             guard !isLoading else { return }
             
-            if let image = cache?[url] { //Getting image from cache
+            if let image = cache?[url] { // Getting image from cache
                 self.image = image
                 return
             }
             
             cancelable = URLSession.shared.dataTaskPublisher(for: url)
                 .subscribe(on: Self.imageProcessingQueue)
-                .map{ UIImage(data: $0.data) }
+                .map { UIImage(data: $0.data) }
                 .replaceError(with: nil)
-                //Handling the states
+            // Handling the states
                 .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
                               receiveOutput: { [weak self] in self?.cache($0) },
                               receiveCompletion: { [weak self] _ in self?.onFinish() },
                               receiveCancel: { [weak self] in self?.onFinish() })
                 .receive(on: DispatchQueue.main)
-                .sink{ [weak self] in self?.image = $0}
+                .sink { [weak self] in self?.image = $0 }
         }
     }
     
-    func cancel(){
+    func cancel() {
         cancelable?.cancel()
     }
     
@@ -63,7 +62,6 @@ class ImageLoader: ObservableObject{
         isLoading = false
     }
     
-    
     private func cache(_ image: UIImage?) {
         if let url = url {
             image.map { cache?[url] = $0 }
@@ -71,31 +69,33 @@ class ImageLoader: ObservableObject{
     }
 }
 
-struct RemoteImage<ImagePlaceholder: View>: View{
+struct RemoteImage<ImagePlaceholder: View>: View {
     @StateObject private var loader: ImageLoader
     private let imagePlaceholder: ImagePlaceholder
     private let image: (UIImage) -> Image
-    
-    init(stringURL: String, @ViewBuilder imagePlaceholder: @escaping () -> ImagePlaceholder,
-         @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:))//This make the image customisable
-    {
+    // This make the image customisable
+    init(
+        stringURL: String,
+        @ViewBuilder imagePlaceholder: @escaping () -> ImagePlaceholder,
+        @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
+    ) {
         self.imagePlaceholder = imagePlaceholder()
-        //To wrap the value in a StateObject Object
-        _loader = StateObject(wrappedValue: ImageLoader(stringUrl: stringURL,cache: Environment(\.imageCache).wrappedValue))
+        // To wrap the value in a StateObject Object
+        _loader = StateObject(wrappedValue: ImageLoader(stringUrl: stringURL, cache: Environment(\.imageCache).wrappedValue))
         self.image = image
     }
     
-    var body: some View{
-        content.onAppear(perform: {
+    var body: some View {
+        content.onAppear {
             loader.load()
-        })
+        }
     }
     
     private var content: some View {
-        Group{
-            if loader.image != nil{
-                image(loader.image!)
-            }else{
+        Group {
+            if let loadImage =  loader.image {
+                image(loadImage)
+            } else {
                 imagePlaceholder
             }
         }

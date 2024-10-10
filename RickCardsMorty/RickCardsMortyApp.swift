@@ -23,27 +23,18 @@ struct RickCardsMortyApp: App {
     // Main entry point in swiftUI life cycle, notice how the protocol return a Scene, not a View
     var body: some Scene {
         WindowGroup { // This is a cross-platform struct that represents a scene of multiple window
-            EntryView(
-                store: Store(
-                    initialState: EntryViewFeature.State(),
-                    reducer: EntryViewFeature.init
+            WithPerceptionTracking {
+                EntryView(
+                    store: Store(initialState: EntryViewFeature.State.login(.init())) {
+                        EntryViewFeature()
+                    }
                 )
-            )
-            .onOpenURL { url in
-                GIDSignIn.sharedInstance.handle(url)
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
+                }
             }
         }
-        .onChange(of: scenePhase) { phase in // This is just for knowledge purposes
-            switch phase {
-            case .background:
-                break
-            case .inactive:
-                break
-            case .active:
-                break
-            default:
-                break
-            }
+        .onChange(of: scenePhase) { _ in // This is just for knowledge purposes
         }
     }
 }

@@ -16,37 +16,38 @@ struct LoginView: View {
     @Environment(\.mainFont) var mainFont
     
     var body: some View {
-        
-        ZStack { // Is better to use ZStack for Background colors∫
-            
-            Color("generalBgColor").ignoresSafeArea()
-            
-            VStack {
+        WithPerceptionTracking {
+            ZStack { // Is better to use ZStack for Background colors∫
                 
-                Image("rickIcon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .top)
-                    .padding()
-                    .shadow(color: .black.opacity(0.3), radius: 25, x: 0, y: 0)
+                Color("generalBgColor").ignoresSafeArea()
                 
-                ActivityIndicator(show: $store.loading)
-                    .padding(.horizontal, 150)
-                
-                Text("Please sign on with:")
-                    .font(Font.custom(mainFont, size: 20))
-                    .foregroundColor(.white)
-                    .padding(.vertical, 30)
-                
-                SignInButton() { // This is the target closure in the custom view
-                    store.send(.signIn)
+                VStack {
+                    
+                    Image("rickIcon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 120, height: 120, alignment: .top)
+                        .padding()
+                        .shadow(color: .black.opacity(0.3), radius: 25, x: 0, y: 0)
+                    
+                    ActivityIndicator(show: $store.loading)
+                        .padding(.horizontal, 150)
+                    
+                    Text("Please sign on with:")
+                        .font(Font.custom(mainFont, size: 20))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 30)
+                    
+                    SignInButton() { // This is the target closure in the custom view
+                        store.send(.signIn)
+                    }
+                    .padding(.horizontal, 60)
+                    
                 }
-                .padding(.horizontal, 60)
-                
             }
-        }
-        .onAppear {
-            store.send(.restorePreviusSection)
+            .onAppear {
+                store.send(.restorePreviusSection)
+            }
         }
         
     }

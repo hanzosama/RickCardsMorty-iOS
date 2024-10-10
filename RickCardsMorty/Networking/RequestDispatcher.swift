@@ -18,12 +18,12 @@ public protocol Dispatcher {
     
     init(environment: NetworkingEnvironment)
     
-    func execute<T: Decodable>(request: Request, reponseObject: T.Type) throws -> AnyPublisher<T, RequestError>
+    func execute<T: Decodable>(request: Request, reponseObject: T.Type) async throws -> T
     
 }
 
 public class RequestDispatcher: Dispatcher {
-
+    private var cancellables: Set<AnyCancellable> = []
     private var environment: NetworkingEnvironment
     private var session: URLSession
     
@@ -35,10 +35,10 @@ public class RequestDispatcher: Dispatcher {
     public func execute<T: Decodable>(
         request: Request,
         reponseObject: T.Type
-    ) -> AnyPublisher<T, RequestError> {
+    ) async throws -> T {
         do {
             let urlRequest = try self.prepare(for: request)
-            return session.dataTaskPublisher(for: urlRequest)
+            let publisher = session.dataTaskPublisher(for: urlRequest)
                 .tryMap { data, response in
                     guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                         throw RequestError.unknown
@@ -46,19 +46,35 @@ public class RequestDispatcher: Dispatcher {
                     
                     return data
                     
-                }.decode(type: T.self, decoder: JSONDecoder())
+                }
+                .decode(type: T.self, decoder: JSONDecoder())
                 .mapError { error in
                     if let error = error as? RequestError {
                         return error
                     } else {
                         return RequestError.serverError
                     }
-                }.eraseToAnyPublisher()
+                }
+                .eraseToAnyPublisher()
+            
+            return try await withCheckedThrowingContinuation { continuation in
+                publisher.sink { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                } receiveValue: { data in
+                    continuation.resume(returning: data)
+                }
+                .store(in: &cancellables)
+            }
         } catch {
             if let error = error as? RequestError {
-                return Fail<T, RequestError>(error: error).eraseToAnyPublisher()
+                throw error
             } else {
-                return Fail<T, RequestError>(error: RequestError.unknown).eraseToAnyPublisher()
+                throw RequestError.unknown
             }
         }
         
