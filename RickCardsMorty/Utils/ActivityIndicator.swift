@@ -11,20 +11,20 @@ import SwiftUI
 struct ActivityIndicator: View {
     
     @Binding private var isAnimating: Bool
-    let count: UInt
+    let count: Int
     let width: CGFloat
     public let spacing: CGFloat
     
     init(show: Binding<Bool>, count: UInt = 3, width: CGFloat = 8, spacing: CGFloat = 1) {
         self._isAnimating = show
-        self.count = count
+        self.count = Int(count)
         self.width = width
         self.spacing = spacing
     }
     
     var body: some View {
         GeometryReader { geometry in
-            ForEach(0..<Int(count)) { index in
+            ForEach(0..<count, id: \.self) { index in
                 item(forIndex: index, in: geometry.size)
                     .rotationEffect(isAnimating ? .degrees(360) : .degrees(0))
                     .animation(

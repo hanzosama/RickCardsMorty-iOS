@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-//MARK: - Environment Keys
+// MARK: - Environment Keys
 
 struct ImageCacheKey: EnvironmentKey {
     static let defaultValue: ImageCache = TemporaryImageCache()
 }
 
-struct FontTypeKey:EnvironmentKey {
+struct FontTypeKey: EnvironmentKey {
     static let defaultValue: String = "ChalkboardSE-Regular"
 }
 
@@ -28,16 +28,16 @@ extension EnvironmentValues {
     }
 }
 
-//MARK: - Environment Structures
+// MARK: - Environment Structures
 
 public struct NetworkingEnvironment {
-    public var name:String
-    public var host:String
-    public var baseURL:String
-    public var headers:[String:Any] = [:]
+    public var name: String
+    public var host: String
+    public var baseURL: String
+    public var headers: [String: Any] = [:]
     public var cachePolicy: URLRequest.CachePolicy  = .reloadIgnoringLocalAndRemoteCacheData
     
-    public init(_ name: String, host: String, baseURL:String) {
+    public init(_ name: String, host: String, baseURL: String) {
         self.name = name
         self.host = host
         self.baseURL = baseURL

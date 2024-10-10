@@ -12,7 +12,6 @@ public enum DataType {
     case data
 }
 
-
 public enum HTTPMethod: String {
     case POST
     case PUT
@@ -27,7 +26,7 @@ public enum RequestParams {
     case url(_: [String: Any])
 }
 
-public protocol Request{
+public protocol Request {
     var path: String { get }
     var method: HTTPMethod { get }
     var parameters: RequestParams { get }

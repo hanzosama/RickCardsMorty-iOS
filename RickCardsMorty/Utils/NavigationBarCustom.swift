@@ -7,27 +7,30 @@
 
 import Foundation
 import SwiftUI
-
-import SwiftUI
 import UIKit
 
 struct NavigationBarCustom: ViewModifier {
     
-    init(backgroundColor: UIColor, tintColor: UIColor,titleFontName:String? = nil ,largeTitleFontName:String? = nil) {
+    init(
+        backgroundColor: UIColor,
+        tintColor: UIColor,
+        titleFontName: String? = nil,
+        largeTitleFontName: String? = nil
+    ) {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
         coloredAppearance.backgroundColor = backgroundColor
         
-        if let largeTitleFontName = largeTitleFontName,let largeTitleFont = UIFont(name:largeTitleFontName, size: 40) {
+        if let largeTitleFontName = largeTitleFontName, let largeTitleFont = UIFont(name: largeTitleFontName, size: 40) {
             coloredAppearance.largeTitleTextAttributes = [.foregroundColor: tintColor, .font: largeTitleFont]
-        }else{
+        } else {
             coloredAppearance.largeTitleTextAttributes = [.foregroundColor: tintColor]
         }
         
-        if let titleFontName = titleFontName, let titleFont = UIFont(name: titleFontName, size: 20){
+        if let titleFontName = titleFontName, let titleFont = UIFont(name: titleFontName, size: 20) {
             coloredAppearance.titleTextAttributes = [.foregroundColor: tintColor, .font: titleFont]
             
-        }else{
+        } else {
             coloredAppearance.titleTextAttributes = [.foregroundColor: tintColor]
             
         }
@@ -43,4 +46,3 @@ struct NavigationBarCustom: ViewModifier {
         content
     }
 }
-

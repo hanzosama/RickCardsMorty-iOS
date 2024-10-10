@@ -9,31 +9,36 @@ import SwiftUI
 
 struct CharacterCardRow: View {
     
-    private var character:Character
+    private var character: RickCardsMorty.Character
     @Environment(\.mainFont) var mainFont
     @Environment(\.colorScheme) var colorScheme
     
-    init(_ character:Character) {
+    init(_ character: RickCardsMorty.Character) {
         self.character = character
     }
     
     var body: some View {
-        ZStack{
+        ZStack {
             Color("cardColor").edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center){
-                RemoteImage(stringURL:character.imageUrl,
-                            imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white: .black) }
-                            ,image: { Image(uiImage: $0).resizable() })
-                    .padding(20)
-                    .aspectRatio(contentMode: .fit)
-                VStack(alignment:.leading,spacing:0){
+            
+            VStack(alignment: .center) {
+                
+                RemoteImage(
+                    stringURL: character.imageUrl,
+                    imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white: .black) },
+                    image: { Image(uiImage: $0).resizable() }
+                )
+                .padding(20)
+                .aspectRatio(contentMode: .fit)
+                
+                VStack(alignment: .leading, spacing: 0) {
                     Text(character.name)
                         .font(Font.custom(mainFont, size: 24))
                         .bold()
                         .foregroundColor(colorScheme == .light ? .white: .black)
-                        .frame(maxWidth:.infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    HStack{
+                    HStack {
                         Circle()
                             .fill(statusColor)
                             .frame(width: 10, height: 10, alignment: .center)
@@ -41,7 +46,7 @@ struct CharacterCardRow: View {
                             .font(Font.custom(mainFont, size: 18))
                             .foregroundColor(colorScheme == .light ? .white: .black)
                     }
-                    HStack{
+                    HStack {
                         Text("Gender - ")
                             .font(Font.custom(mainFont, size: 18))
                             .foregroundColor(colorScheme == .light ? .white: .black)
@@ -51,13 +56,13 @@ struct CharacterCardRow: View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(colorScheme == .light ? .white: .black)
                     }
-                    HStack{
+                    HStack {
                         Text("Origin - \(character.origin.name)")
                             .font(Font.custom(mainFont, size: 18))
                             .foregroundColor(colorScheme == .light ? .white: .black)
                         
                     }
-                    HStack{
+                    HStack {
                         Text("Last known location - \(character.location.name)")
                             .font(Font.custom(mainFont, size: 18))
                             .foregroundColor(colorScheme == .light ? .white: .black)
@@ -65,13 +70,12 @@ struct CharacterCardRow: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom,20)
+                .padding(.bottom, 20)
             }
         }
         .cornerRadius(5)
         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
     }
-    
     
     var statusColor: Color {
         switch character.status {
@@ -85,8 +89,7 @@ struct CharacterCardRow: View {
     }
     
     var genderImage: Image {
-        switch character.gender
-        {
+        switch character.gender {
         case .female:
             return  Image("female")
         case .male:
@@ -103,7 +106,17 @@ struct CharacterCardRow: View {
 
 struct CharacterCardRow_Previews: PreviewProvider {
     static var previews: some View {
-        let character = Character(id: 1, name: "Rick", status: .alive, species: "Human", gender: .unknown, imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",origin: .init(name: "Earth"), location: .init(name: "Earth C-132"),episode: [])
+        let character = RickCardsMorty.Character(
+            id: 1,
+            name: "Rick",
+            status: .alive,
+            species: "Human",
+            gender: .unknown,
+            imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            origin: .init(name: "Earth"),
+            location: .init(name: "Earth C-132"),
+            episode: []
+        )
         CharacterCardRow(character)
             .preferredColorScheme(.light)
     }
