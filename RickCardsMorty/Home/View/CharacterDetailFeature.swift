@@ -58,6 +58,7 @@ struct CharacterDetailFeature {
                 
             case .processEpisode(let episode):
                 state.episode = episode
+                state.isLoadingPage = false
                 
             case .loadCharactersEpisode:
                 guard let episode = state.episode else {
@@ -79,6 +80,7 @@ struct CharacterDetailFeature {
                 }
             case .processCharacters(let characters):
                 state.characters = characters
+                state.isLoadingPage = false
                 
             case .binding:
                 return .none
