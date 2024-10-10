@@ -30,7 +30,8 @@ struct HomeView: View {
     var body: some View {
         ZStack { // This is due to issue with the Activity indicator navigation
             WithPerceptionTracking {
-                NavigationView {
+                NavigationStack {
+                    
                     ZStack {
                         bgColor.ignoresSafeArea()
                         
@@ -40,20 +41,15 @@ struct HomeView: View {
                                     if !store.characters.isEmpty {
                                         ForEach(store.characters, id: \.id) { character in
                                             WithPerceptionTracking {
-                                                NavigationLink(
-                                                    destination: CharacterDetail(
-                                                        store: Store(
-                                                            initialState: CharacterDetailFeature.State.init(character: character),
-                                                            reducer: CharacterDetailFeature.init
-                                                        )
-                                                    )
-                                                ) {
-                                                    CharacterCardRow(character)
-                                                        .onAppear {
-                                                            store.send(.loadMoreCharacters(character))
-                                                        }
-                                                        .padding(.all, 10)
-                                                }
+                                                
+                                                CharacterCardRow(character)
+                                                    .onAppear {
+                                                        store.send(.loadMoreCharacters(character))
+                                                    }
+                                                    .padding(.all, 10)
+                                                    .onTapGesture {
+                                                        store.send(.characterSelected(character))
+                                                    }
                                             }
                                         }
                                     } else {
@@ -94,8 +90,7 @@ struct HomeView: View {
                                         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
                                 })
                                 .padding(.trailing)
-                                .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0)
-                                // Hide or show the button according to the scrolloffset
+                                .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0) // Hide or show the button according to the scrolloffset
                                     .opacity(-scrollViewOffset > scrollTreshold ? 1 : 0)
                                     .animation(.easeInOut)
                                 , alignment: .bottomTrailing
@@ -131,7 +126,14 @@ struct HomeView: View {
                             
                         }
                     }
-                    
+                    .navigationDestination(
+                        item: $store.scope(
+                            state: \.cardDetail,
+                            action: \.cardDetail
+                        )
+                    ) { store in
+                        CharacterDetailView(store: store)
+                    }
                     .navigationTitle("RickCardsMorty")
                     .navigationBarItems(trailing:
                                             HStack {

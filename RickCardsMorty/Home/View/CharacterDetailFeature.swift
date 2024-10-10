@@ -27,6 +27,7 @@ struct CharacterDetailFeature {
         }
     }
     
+    @CasePathable
     enum Action: BindableAction {
         case loadEpisodeDetails
         case processEpisode(Episode)

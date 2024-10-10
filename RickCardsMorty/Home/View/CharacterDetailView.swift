@@ -9,8 +9,9 @@ import SwiftUI
 
 import ComposableArchitecture
 
-struct CharacterDetail: View {
+struct CharacterDetailView: View {
     @Perception.Bindable var store: StoreOf<CharacterDetailFeature>
+    @Environment(\.dismiss) var dismiss
     
     public init(store: StoreOf<CharacterDetailFeature>) {
         self.store = store
@@ -49,34 +50,35 @@ struct CharacterDetail: View {
                         
                         ScrollView {
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-                                ForEach(store.characters, id: \.id) { character in
-                                    if character.id != store.character.id {
-                                        VStack {
-                                            RemoteImage(
-                                                stringURL: character.imageUrl,
-                                                imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white: .black) }
-                                                ,
-                                                image: { Image(uiImage: $0).resizable() }
-                                            )
-                                            .width(100)
-                                            .height(100)
-                                            .padding(1)
-                                            .aspectRatio(contentMode: .fit)
-                                            .clipShape(Circle())
-                                            HStack(alignment: .center) {
-                                                Circle()
-                                                    .fill(getStatusColor(character))
-                                                    .frame(width: 10, height: 10, alignment: .leading)
-                                                Spacer()
-                                                Text(character.name)
-                                                    .font(Font.custom(mainFont, size: 16))
-                                                    .foregroundColor(colorScheme == .light ? .white: .black)
-                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                WithPerceptionTracking {
+                                    ForEach(store.characters, id: \.id) { character in
+                                        if character.id != store.character.id {
+                                            VStack {
+                                                RemoteImage(
+                                                    stringURL: character.imageUrl,
+                                                    imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white: .black) }
+                                                    ,
+                                                    image: { Image(uiImage: $0).resizable() }
+                                                )
+                                                .width(100)
+                                                .height(100)
+                                                .padding(1)
+                                                .aspectRatio(contentMode: .fit)
+                                                .clipShape(Circle())
+                                                HStack(alignment: .center) {
+                                                    Circle()
+                                                        .fill(getStatusColor(character))
+                                                        .frame(width: 10, height: 10, alignment: .leading)
+                                                    Spacer()
+                                                    Text(character.name)
+                                                        .font(Font.custom(mainFont, size: 16))
+                                                        .foregroundColor(colorScheme == .light ? .white: .black)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                }
                                             }
+                                            
                                         }
-                                        
                                     }
-                                    
                                 }
                             }
                         }
@@ -94,10 +96,30 @@ struct CharacterDetail: View {
             .padding(.all, 10)
             .navigationTitle("First Episode of \(store.character.name)")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(leading: btnBack)
             .onAppear {
                 store.send(.loadEpisodeDetails)
             }
         }
+    }
+    
+    var btnBack: some View {
+        Button(
+            action: {
+                self.dismiss()
+            },
+            label: {
+                HStack {
+                    Image(systemName: "arrow.left")
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.white)
+                    
+                    Text("Go back")
+                        .foregroundColor(.white)
+                }
+            }
+        )
     }
     
     func getStatusColor(_ character: Character) -> Color {

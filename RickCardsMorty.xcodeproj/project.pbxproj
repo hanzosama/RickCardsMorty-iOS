@@ -23,7 +23,7 @@
 		5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35126E037A300D35C07 /* ActivityIndicator.swift */; };
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
-		57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetail.swift */; };
+		57E49540270B929A00BF3D16 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */; };
 		57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeRequest.swift */; };
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
@@ -84,12 +84,11 @@
 		5768F35126E037A300D35C07 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
-		57E4953F270B929A00BF3D16 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		57E49541270B999900BF3D16 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
 		AF81A4882CB723E30088D96B /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
@@ -219,7 +218,6 @@
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				57E7091826EAC723005243F1 /* TestPlayground.playground */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
@@ -261,7 +259,7 @@
 			children = (
 				57E7091026EAC10F005243F1 /* HomeView.swift */,
 				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
-				57E4953F270B929A00BF3D16 /* CharacterDetail.swift */,
+				57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */,
 				AF81A4882CB723E30088D96B /* HomeFeature.swift */,
 				AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */,
 			);
@@ -455,7 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */,
+				57E49540270B929A00BF3D16 /* CharacterDetailView.swift in Sources */,
 				57E7091626EAC275005243F1 /* Character.swift in Sources */,
 				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
 				57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */,
@@ -567,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -623,7 +621,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -643,7 +641,7 @@
 				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,7 +663,7 @@
 				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

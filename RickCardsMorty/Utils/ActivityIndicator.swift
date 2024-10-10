@@ -31,6 +31,8 @@ struct ActivityIndicator: View {
                         Animation.default
                             .speed(Double.random(in: 0.2...0.5))
                             .repeatCount(isAnimating ? .max : 1, autoreverses: false)
+                        ,
+                        value: isAnimating
                     )
             }
         }

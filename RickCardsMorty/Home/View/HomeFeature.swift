@@ -23,6 +23,7 @@ struct HomeFeature {
         var queryString = ""
         @ObservationStateIgnored var currentPage = 1
         @ObservationStateIgnored var canLoadMorePages = true
+        @Presents var cardDetail: CharacterDetailFeature.State?
     }
     
     enum Action: BindableAction {
@@ -32,6 +33,8 @@ struct HomeFeature {
         case resetData
         case logoutTap
         case emptySearch
+        case characterSelected(RickCardsMorty.Character)
+        case cardDetail(PresentationAction<CharacterDetailFeature.Action>)
         case binding(BindingAction<State>)
     }
     
@@ -100,10 +103,16 @@ struct HomeFeature {
                 
             case .logoutTap:
                 break
-                
+            case .cardDetail:
+                break
+            case .characterSelected(let character):
+                state.cardDetail = CharacterDetailFeature.State(character: character)
             }
             
             return .none
+        }
+        .ifLet(\.$cardDetail, action: \.cardDetail) {
+            CharacterDetailFeature()
         }
     }
 }
