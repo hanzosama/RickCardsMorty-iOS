@@ -133,3 +133,13 @@ struct CharacterDetailView: View {
         }
     }
 }
+
+#Preview {
+    let character = CharactersMocks.characterMock()
+    
+    return CharacterDetailView(
+        store: Store(
+            initialState: CharacterDetailFeature.State.init(character: character), reducer: CharacterDetailFeature.init
+        )
+    )
+}

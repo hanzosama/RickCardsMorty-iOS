@@ -30,3 +30,13 @@ struct EntryView: View {
         }
     }
 }
+
+#Preview {
+    EntryView(
+        store:
+            Store(
+                initialState: EntryViewFeature.State.login(.init()),
+                reducer: EntryViewFeature.init
+            )
+    )
+}

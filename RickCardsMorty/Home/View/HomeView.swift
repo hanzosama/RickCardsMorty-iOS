@@ -174,3 +174,12 @@ struct HomeView: View {
         
     }
 }
+
+#Preview {
+    HomeView(
+        store: Store(
+            initialState: HomeFeature.State.init(),
+            reducer: HomeFeature.init
+        )
+    )
+}

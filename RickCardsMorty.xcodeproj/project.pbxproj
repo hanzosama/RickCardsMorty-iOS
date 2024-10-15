@@ -29,6 +29,8 @@
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
 		AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = AF0043262CB4697D00817EDB /* SwiftUIX */; };
+		AF5B02CA2CBEEBAB00FDFB67 /* RickCardsMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */; };
+		AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */; };
 		AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */; };
 		AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */; };
 		AF81A4892CB723E30088D96B /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4882CB723E30088D96B /* HomeFeature.swift */; };
@@ -89,6 +91,7 @@
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMocks.swift; sourceTree = "<group>"; };
 		AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
 		AF81A4882CB723E30088D96B /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF5B02CB2CBEEFB600FDFB67 /* Mocks */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
@@ -272,6 +276,14 @@
 				57E7091526EAC275005243F1 /* Character.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AF5B02CB2CBEEFB600FDFB67 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		AFB16EB92CB46CA400C6E783 /* Frameworks */ = {
@@ -459,6 +471,7 @@
 				57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */,
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
 				57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */,
+				AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */,
 				574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
 				572B4AB626EFE66B000D9410 /* Request.swift in Sources */,
@@ -482,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5B02CA2CBEEBAB00FDFB67 /* RickCardsMortyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -705,7 +719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

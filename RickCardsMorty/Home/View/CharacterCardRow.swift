@@ -102,24 +102,9 @@ struct CharacterCardRow: View {
     }
 }
 
-#if DEBUG
+#Preview {
+    let character = CharactersMocks.characterMock()
 
-struct CharacterCardRow_Previews: PreviewProvider {
-    static var previews: some View {
-        let character = RickCardsMorty.Character(
-            id: 1,
-            name: "Rick",
-            status: .alive,
-            species: "Human",
-            gender: .unknown,
-            imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-            origin: .init(name: "Earth"),
-            location: .init(name: "Earth C-132"),
-            episode: []
-        )
-        CharacterCardRow(character)
-            .preferredColorScheme(.light)
-    }
+    return CharacterCardRow(character)
+        .preferredColorScheme(.light)
 }
-
-#endif

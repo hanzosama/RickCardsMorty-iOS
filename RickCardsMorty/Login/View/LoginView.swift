@@ -33,7 +33,7 @@ struct LoginView: View {
                     ActivityIndicator(show: $store.loading)
                         .padding(.horizontal, 150)
                     
-                    Text("Please sign on with:")
+                    Text("Please sign in with:")
                         .font(Font.custom(mainFont, size: 20))
                         .foregroundColor(.white)
                         .padding(.vertical, 30)
