@@ -18,7 +18,7 @@ public protocol Dispatcher {
     
     init(environment: NetworkingEnvironment)
     
-    func execute<T: Decodable>(request: Request, reponseObject: T.Type) async throws -> T
+    func execute<T: Decodable>(request: Request, responseObject: T.Type) async throws -> T
     
 }
 
@@ -34,7 +34,7 @@ public class RequestDispatcher: Dispatcher {
     
     public func execute<T: Decodable>(
         request: Request,
-        reponseObject: T.Type
+        responseObject: T.Type
     ) async throws -> T {
         do {
             let urlRequest = try self.prepare(for: request)

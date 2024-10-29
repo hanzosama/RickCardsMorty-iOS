@@ -27,7 +27,7 @@ class HomeFeatureTests: XCTestCase {
             $0.characters = []
         }
         
-        await store.receive(\.processReponse) {
+        await store.receive(\.processResponse) {
             $0.isLoadingPage = false
             $0.canLoadMorePages = false
             $0.currentPage = 2

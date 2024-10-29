@@ -102,15 +102,15 @@ extension CharacterService {
     public static let live = Self.init(
         fetchCharacters: { index in
             let request = CharacterRequest.all(page: index)
-            return try await requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+            return try await requestDispatcher.execute(request: request, responseObject: CharacterResponse.self)
         },
         fetchCharactersLike: { name, index in
             let request = CharacterRequest.name(name: name, page: index)
-            return try await requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+            return try await requestDispatcher.execute(request: request, responseObject: CharacterResponse.self)
         },
         fectchCharatersBy: { ids in
             let request = CharacterRequest.multiple(ids: ids)
-            return try await requestDispatcher.execute(request: request, reponseObject: [Character].self)
+            return try await requestDispatcher.execute(request: request, responseObject: [Character].self)
         }
     )
 }
@@ -123,13 +123,13 @@ extension CharacterService: DependencyKey {
 #if DEBUG
 extension CharacterService {
     public static let mock = Self.init(
-        fetchCharacters: { index in
+        fetchCharacters: { _ in
             CharactersMocks.characterResponseMock()
         },
-        fetchCharactersLike: { name, index in
+        fetchCharactersLike: { _, _ in
             CharactersMocks.characterResponseMock()
         },
-        fectchCharatersBy: { ids in
+        fectchCharatersBy: { _ in
             [CharactersMocks.characterMock()]
         }
     )

@@ -29,7 +29,7 @@ struct HomeFeature {
     enum Action: BindableAction {
         case loadMoreCharacters(_ currentCharacter: RickCardsMorty.Character)
         case loadCharacters
-        case processReponse(response: CharacterResponse)
+        case processResponse(response: CharacterResponse)
         case resetData
         case logoutTap
         case emptySearch
@@ -66,17 +66,17 @@ struct HomeFeature {
                 return .run { send in
                     if queryString.isEmpty {
                         let response = try await characterService.fetchCharacters(currentPage)
-                        await send(.processReponse(response: response))
+                        await send(.processResponse(response: response))
                     } else {
                         let response = try await characterService.fetchCharactersLike(queryString, currentPage)
-                        await send(.processReponse(response: response))
+                        await send(.processResponse(response: response))
                     }
                 } catch: { _, send in
                     print("There was an error in the search")
                     await send(.emptySearch)
                 }
                 
-            case .processReponse(let response):
+            case .processResponse(let response):
                 state.canLoadMorePages = state.currentPage < response.info.pages
                 state.currentPage += 1
                 state.isLoadingPage = false

@@ -58,7 +58,7 @@ public struct  EpisodeService {
     
     func fetchEpisodes(id: Int) async throws -> Episode {
         let request = EpisodeRequest.id(id: id)
-        return try await self.requestDispatcher.execute(request: request, reponseObject: Episode.self)
+        return try await self.requestDispatcher.execute(request: request, responseObject: Episode.self)
     }
     
 }
