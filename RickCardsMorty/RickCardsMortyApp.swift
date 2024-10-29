@@ -8,6 +8,7 @@
 import SwiftUI
 
 import ComposableArchitecture
+import XCTestDynamicOverlay
 import GoogleSignIn
 import Firebase
 
@@ -23,16 +24,19 @@ struct RickCardsMortyApp: App {
     // Main entry point in swiftUI life cycle, notice how the protocol return a Scene, not a View
     var body: some Scene {
         WindowGroup { // This is a cross-platform struct that represents a scene of multiple window
-            WithPerceptionTracking {
-                EntryView(
-                    store: Store(initialState: EntryViewFeature.State.login(.init())) {
-                        EntryViewFeature()
+            if !_XCTIsTesting {
+                WithPerceptionTracking {
+                    EntryView(
+                        store: Store(initialState: EntryViewFeature.State.login(.init())) {
+                            EntryViewFeature()
+                        }
+                    )
+                    .onOpenURL { url in
+                        GIDSignIn.sharedInstance.handle(url)
                     }
-                )
-                .onOpenURL { url in
-                    GIDSignIn.sharedInstance.handle(url)
                 }
             }
+            
         }
         .onChange(of: scenePhase) { _ in // This is just for knowledge purposes
         }

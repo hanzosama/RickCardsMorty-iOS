@@ -65,10 +65,10 @@ struct HomeFeature {
                 
                 return .run { send in
                     if queryString.isEmpty {
-                        let response = try await characterService.fectchCharaters(at: currentPage)
+                        let response = try await characterService.fetchCharacters(currentPage)
                         await send(.processReponse(response: response))
                     } else {
-                        let response = try await characterService.fectchCharaters(like: queryString, at: currentPage)
+                        let response = try await characterService.fetchCharactersLike(queryString, currentPage)
                         await send(.processReponse(response: response))
                     }
                 } catch: { _, send in

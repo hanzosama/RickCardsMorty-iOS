@@ -76,7 +76,7 @@ struct CharacterDetailFeature {
                 })
                 
                 return .run { [ids] send in
-                    let characters = try await characterService.fectchCharaters(ids: ids)
+                    let characters = try await characterService.fectchCharatersBy(ids)
                     await send(.processCharacters(characters))
                 }
             case .processCharacters(let characters):

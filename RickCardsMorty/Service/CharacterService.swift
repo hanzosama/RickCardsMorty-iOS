@@ -75,26 +75,19 @@ enum CharacterRequest: Request {
     
 }
 
+// Struct base dependecy
+
 public struct CharacterService {
     
-    var requestDispatcher: RequestDispatcher {
+    static var requestDispatcher: RequestDispatcher {
         RequestDispatcher(environment: .init("prod", host: "https://rickandmortyapi.com/", baseURL: "api/"))
     }
     
-    func fectchCharaters(at index: Int) async throws -> CharacterResponse {
-        let request = CharacterRequest.all(page: index)
-        return try await self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
-    }
+    var fetchCharacters: (_ index: Int) async throws -> CharacterResponse
     
-    func fectchCharaters(like name: String, at index: Int) async throws -> CharacterResponse {
-        let request = CharacterRequest.name(name: name, page: index)
-        return try await self.requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
-    }
+    var fetchCharactersLike: (_ name: String, _ index: Int) async throws -> CharacterResponse
     
-    func fectchCharaters(ids: [String]) async throws -> [Character] {
-        let request = CharacterRequest.multiple(ids: ids)
-        return try await self.requestDispatcher.execute(request: request, reponseObject: [Character].self)
-    }
+    var fectchCharatersBy: (_ ids: [String]) async throws -> [Character]
     
 }
 
@@ -106,9 +99,39 @@ extension DependencyValues {
 }
 
 extension CharacterService {
-    public static let live = CharacterService.init()
+    public static let live = Self.init(
+        fetchCharacters: { index in
+            let request = CharacterRequest.all(page: index)
+            return try await requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+        },
+        fetchCharactersLike: { name, index in
+            let request = CharacterRequest.name(name: name, page: index)
+            return try await requestDispatcher.execute(request: request, reponseObject: CharacterResponse.self)
+        },
+        fectchCharatersBy: { ids in
+            let request = CharacterRequest.multiple(ids: ids)
+            return try await requestDispatcher.execute(request: request, reponseObject: [Character].self)
+        }
+    )
 }
 
 extension CharacterService: DependencyKey {
     public static var liveValue = CharacterService.live
+    public static var testValue = CharacterService.mock
 }
+
+#if DEBUG
+extension CharacterService {
+    public static let mock = Self.init(
+        fetchCharacters: { index in
+            CharactersMocks.characterResponseMock()
+        },
+        fetchCharactersLike: { name, index in
+            CharactersMocks.characterResponseMock()
+        },
+        fectchCharatersBy: { ids in
+            [CharactersMocks.characterMock()]
+        }
+    )
+}
+#endif

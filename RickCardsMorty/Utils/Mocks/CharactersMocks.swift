@@ -10,7 +10,7 @@ import Foundation
 #if DEBUG
 public enum CharactersMocks {
     public static func characterMock() -> RickCardsMorty.Character {
-         RickCardsMorty.Character(
+        RickCardsMorty.Character(
             id: 1,
             name: "Rick",
             status: .alive,
@@ -20,6 +20,14 @@ public enum CharactersMocks {
             origin: .init(name: "Earth"),
             location: .init(name: "Earth C-132"),
             episode: ["1"]
+        )
+    }
+    
+    public static func characterResponseMock() -> CharacterResponse {
+        CharacterResponse(
+            info: Info.init(pages: 1), results: [
+                CharactersMocks.characterMock()
+            ]
         )
     }
 }
