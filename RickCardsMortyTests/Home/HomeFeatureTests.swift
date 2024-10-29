@@ -13,9 +13,8 @@ import ComposableArchitecture
 
 class HomeFeatureTests: XCTestCase {
 
-    @MainActor
     func testHomeFeatureBasic() async {
-        let store = TestStore(
+        let store = await TestStore(
             initialState: HomeFeature.State(),
             reducer: HomeFeature.init
         )
