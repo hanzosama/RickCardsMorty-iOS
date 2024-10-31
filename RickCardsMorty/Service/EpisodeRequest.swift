@@ -50,13 +50,17 @@ enum EpisodeRequest: Request {
     }
 }
 
-public struct  EpisodeService {
+public protocol EpisodeService {
+    func fetchEpisodes(id: Int) async throws -> Episode
+}
+
+public struct  EpisodeServiceImpl: EpisodeService {
     
     var requestDispatcher: RequestDispatcher {
         RequestDispatcher(environment: .init("prod", host: "https://rickandmortyapi.com/", baseURL: "api/"))
     }
     
-    func fetchEpisodes(id: Int) async throws -> Episode {
+    public func fetchEpisodes(id: Int) async throws -> Episode {
         let request = EpisodeRequest.id(id: id)
         return try await self.requestDispatcher.execute(request: request, responseObject: Episode.self)
     }
@@ -65,15 +69,15 @@ public struct  EpisodeService {
 
 extension DependencyValues {
     public var episodeService: EpisodeService {
-        get { self[EpisodeService.self] }
-        set { self[EpisodeService.self] = newValue }
+        get { self[EpisodeServiceKey.self] }
+        set { self[EpisodeServiceKey.self] = newValue }
     }
 }
 
-extension EpisodeService {
-    public static let live = EpisodeService.init()
+extension EpisodeServiceImpl {
+    public static let live = EpisodeServiceImpl.init()
 }
 
-extension EpisodeService: DependencyKey {
-    public static var liveValue = EpisodeService.live
+public enum EpisodeServiceKey: DependencyKey {
+    public static var liveValue: any EpisodeService = EpisodeServiceImpl.live
 }
