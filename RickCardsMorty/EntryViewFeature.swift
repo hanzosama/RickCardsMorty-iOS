@@ -38,8 +38,10 @@ struct EntryViewFeature {
             case .login:
                 break
             case .home(.logoutTap):
-                try? authenticationManager.signOutUser()
                 state = .login(LoginFeature.State.init())
+                return .run { _ in
+                    try? await authenticationManager.signOutUser()
+                }
             case .home:
                 break
             }

@@ -11,45 +11,42 @@ import ComposableArchitecture
 import GoogleSignIn
 
 struct LoginView: View {
-    @Perception.Bindable var store: StoreOf<LoginFeature>
+    @Bindable var store: StoreOf<LoginFeature>
     
     @Environment(\.mainFont) var mainFont
     
     var body: some View {
-        WithPerceptionTracking {
-            ZStack { // Is better to use ZStack for Background colors∫
+        ZStack { // Is better to use ZStack for Background colors∫
+            
+            Color("generalBgColor").ignoresSafeArea()
+            
+            VStack {
                 
-                Color("generalBgColor").ignoresSafeArea()
+                Image("rickIcon")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120, alignment: .top)
+                    .padding()
+                    .shadow(color: .black.opacity(0.3), radius: 25, x: 0, y: 0)
                 
-                VStack {
-                    
-                    Image("rickIcon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120, alignment: .top)
-                        .padding()
-                        .shadow(color: .black.opacity(0.3), radius: 25, x: 0, y: 0)
-                    
-                    ActivityIndicator(show: $store.loading)
-                        .padding(.horizontal, 150)
-                    
-                    Text("Please sign in with:")
-                        .font(Font.custom(mainFont, size: 20))
-                        .foregroundColor(.white)
-                        .padding(.vertical, 30)
-                    
-                    SignInButton() { // This is the target closure in the custom view
-                        store.send(.signIn)
-                    }
-                    .padding(.horizontal, 60)
-                    
+                ActivityIndicator(show: $store.loading)
+                    .padding(.horizontal, 150)
+                
+                Text("Please sign in with:")
+                    .font(Font.custom(mainFont, size: 20))
+                    .foregroundColor(.white)
+                    .padding(.vertical, 30)
+                
+                SignInButton() { // This is the target closure in the custom view
+                    store.send(.signIn)
                 }
-            }
-            .onAppear {
-                store.send(.restorePreviusSection)
+                .padding(.horizontal, 60)
+                
             }
         }
-        
+        .onAppear {
+            store.send(.restorePreviusSection)
+        }
     }
 }
 

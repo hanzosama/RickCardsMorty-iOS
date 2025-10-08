@@ -29,6 +29,7 @@ struct LoginFeature {
         case signOut
         case restorePreviusSection
         case signInSuccess
+        case signOutSuccess
         case signError
     }
     
@@ -50,16 +51,18 @@ struct LoginFeature {
                 
             case .signOut:
                 state.loading = true
-                
-                do {
-                    try authManager.signOutUser()
-                } catch {
-                    print("There was an error closing the app")
+
+                return .run { send in
+                    do {
+                        try await authManager.signOutUser()
+                    } catch {
+                        print("There was an error closing the app")
+                        await send(.signError)
+                    }
+                    
+                    await send(.signOutSuccess)
                 }
                 
-                state.loading = false
-                
-                return .none
             case .restorePreviusSection:
                 state.loading = true
                 
@@ -74,6 +77,10 @@ struct LoginFeature {
             case .signInSuccess:
                 state.loading = false
                 state.sessionStatus = .signedIn
+                
+            case .signOutSuccess:
+                state.loading = false
+                state.sessionStatus = .signedOut
                 
             case .signError:
                 state.loading = false

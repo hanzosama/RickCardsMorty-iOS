@@ -27,13 +27,14 @@ public struct AuthenticationManager {
         GIDSignIn.sharedInstance.configuration = configuration
     }
     
+    @MainActor
     public func signInUser() async throws {
         guard configuration != nil, GIDSignIn.sharedInstance.currentUser == nil else {
             return
         }
         
         // Google Authentication
-        let signInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: (UIApplication.shared.windows.first?.rootViewController)!)
+        let signInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: (UIApplication.getKeyWindow()?.rootViewController)!)
         
         guard let idToken = signInResult.user.idToken else { return }
         
@@ -44,6 +45,7 @@ public struct AuthenticationManager {
         
     }
     
+    @MainActor
     public func signOutUser() throws {
         guard configuration != nil else {
             return

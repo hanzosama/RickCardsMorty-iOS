@@ -38,8 +38,9 @@ struct RickCardsMortyApp: App {
             }
             
         }
-        .onChange(of: scenePhase) { _ in // This is just for knowledge purposes
-        }
+        .onChange(of: scenePhase, { _, _ in            
+        })
+
     }
 }
 

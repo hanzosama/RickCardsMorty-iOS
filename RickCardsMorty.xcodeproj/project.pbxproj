@@ -39,6 +39,7 @@
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
 		AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */; };
 		AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */; };
+		AFC993A52E971C9000D1CDCF /* App+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC993A42E971C8600D1CDCF /* App+Extension.swift */; };
 		AFE766B12CB4977900D3394F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AFE766B02CB4977900D3394F /* ComposableArchitecture */; };
 		AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE766B42CB49D5E00D3394F /* LoginFeature.swift */; };
 		AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */; };
@@ -87,6 +88,7 @@
 		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
 		AF81A4882CB723E30088D96B /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
+		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AFC993A42E971C8600D1CDCF /* App+Extension.swift */,
 				AF5B02CB2CBEEFB600FDFB67 /* Mocks */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
@@ -286,12 +289,11 @@
 				57539F4426DD6E7300BFC63F /* Sources */,
 				57539F4526DD6E7300BFC63F /* Frameworks */,
 				57539F4626DD6E7300BFC63F /* Resources */,
-				AFE766B32CB4995000D3394F /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AFE766B72CB49E7A00D3394F /* PBXTargetDependency */,
+				AFC993A32E971AE200D1CDCF /* PBXTargetDependency */,
 			);
 			name = RickCardsMorty;
 			packageProductDependencies = (
@@ -335,7 +337,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					57539F4726DD6E7300BFC63F = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -394,28 +396,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		AFE766B32CB4995000D3394F /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		57539F4426DD6E7300BFC63F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -436,6 +416,7 @@
 				572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */,
 				572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */,
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
+				AFC993A52E971C9000D1CDCF /* App+Extension.swift in Sources */,
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
 				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
@@ -463,9 +444,9 @@
 			target = 57539F4726DD6E7300BFC63F /* RickCardsMorty */;
 			targetProxy = 57539F5A26DD6E7500BFC63F /* PBXContainerItemProxy */;
 		};
-		AFE766B72CB49E7A00D3394F /* PBXTargetDependency */ = {
+		AFC993A32E971AE200D1CDCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = AFE766B62CB49E7A00D3394F /* SwiftLintBuildToolPlugin */;
+			productRef = AFC993A22E971AE200D1CDCF /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -505,6 +486,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -527,6 +509,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -567,6 +550,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -582,6 +566,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -595,10 +580,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RickCardsMorty/Preview Content\"";
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,10 +605,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RickCardsMorty/Preview Content\"";
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,11 +626,9 @@
 		57539F7126DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,11 +652,9 @@
 		57539F7226DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -757,7 +736,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = exactVersion;
-				version = 1.15.0;
+				version = 1.22.3;
 			};
 		};
 		AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
@@ -801,15 +780,15 @@
 			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
 		};
+		AFC993A22E971AE200D1CDCF /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		AFE766B02CB4977900D3394F /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		AFE766B62CB49E7A00D3394F /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

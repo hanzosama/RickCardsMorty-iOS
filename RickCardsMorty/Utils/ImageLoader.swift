@@ -20,7 +20,7 @@ class ImageLoader: ObservableObject {
     // Taking care of the thread
     private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
     
-    init(stringUrl: String, cache: ImageCache? = nil) {
+    init(stringUrl: String, cache: ImageCache? = TemporaryImageCache()) {
         self.url = URL(string: stringUrl)
         self.cache = cache
     }
@@ -81,7 +81,7 @@ struct RemoteImage<ImagePlaceholder: View>: View {
     ) {
         self.imagePlaceholder = imagePlaceholder()
         // To wrap the value in a StateObject Object
-        _loader = StateObject(wrappedValue: ImageLoader(stringUrl: stringURL, cache: Environment(\.imageCache).wrappedValue))
+        _loader = StateObject(wrappedValue: ImageLoader(stringUrl: stringURL))
         self.image = image
     }
     
