@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "5FDF958D-C91D-4A5B-9436-61C2040899A5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:RickCardsMorty.xcodeproj",
+        "identifier" : "57539F5826DD6E7500BFC63F",
+        "name" : "RickCardsMortyTests"
+      }
+    }
+  ],
+  "version" : 1
+}

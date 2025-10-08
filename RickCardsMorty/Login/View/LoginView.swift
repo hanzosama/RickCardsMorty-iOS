@@ -6,47 +6,55 @@
 //
 
 import SwiftUI
+
+import ComposableArchitecture
 import GoogleSignIn
 
 struct LoginView: View {
+    @Bindable var store: StoreOf<LoginFeature>
     
-    @EnvironmentObject var authViewModel : AuthenticationViewModel
     @Environment(\.mainFont) var mainFont
     
     var body: some View {
-        
-        ZStack{ // Is better to use ZStack for Background colors∫
+        ZStack { // Is better to use ZStack for Background colors∫
+            
             Color("generalBgColor").ignoresSafeArea()
-            VStack{
+            
+            VStack {
+                
                 Image("rickIcon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120, height: 120, alignment: .top)
                     .padding()
                     .shadow(color: .black.opacity(0.3), radius: 25, x: 0, y: 0)
-                ActivityIndicator(show: $authViewModel.loading)
+                
+                ActivityIndicator(show: $store.loading)
                     .padding(.horizontal, 150)
-                Text("Please sign on with:")
+                
+                Text("Please sign in with:")
                     .font(Font.custom(mainFont, size: 20))
                     .foregroundColor(.white)
                     .padding(.vertical, 30)
-                SignInButton(){ //This is the target closure in the custom view
-                    authViewModel.signIn()
+                
+                SignInButton() { // This is the target closure in the custom view
+                    store.send(.signIn)
                 }
                 .padding(.horizontal, 60)
                 
             }
         }
-        .onAppear{
-            authViewModel.restorePreviousSession()
+        .onAppear {
+            store.send(.restorePreviusSection)
         }
-        
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-            .environmentObject(AuthenticationViewModel())
-    }
+#Preview {
+    LoginView(
+        store: Store(
+            initialState: LoginFeature.State(),
+            reducer: LoginFeature.init
+        )
+    )
 }

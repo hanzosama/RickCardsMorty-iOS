@@ -3,38 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35446C4649EE8283F5C3C79E /* Pods_RickCardsMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */; };
-		3EC0603EDF20183603059D50 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */; };
 		572B4AB626EFE66B000D9410 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB526EFE66B000D9410 /* Request.swift */; };
 		572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B4AB726EFE863000D9410 /* RequestDispatcher.swift */; };
 		572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE52E26F01319007F1AEF /* CharacterService.swift */; };
-		572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572BE53126FBC893007F1AEF /* HomeViewModel.swift */; };
 		574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5526FCDC8D00FC47CF /* View+Extension.swift */; };
 		574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */; };
 		574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5926FE18FD00FC47CF /* ImageLoader.swift */; };
 		574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A3F5B26FE58B900FC47CF /* Environment.swift */; };
-		574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 574A3F6026FE7C5800FC47CF /* SwiftUIX */; };
 		57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */; };
 		57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F4D26DD6E7300BFC63F /* LoginView.swift */; };
 		57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F4F26DD6E7500BFC63F /* Assets.xcassets */; };
 		57539F5326DD6E7500BFC63F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57539F5226DD6E7500BFC63F /* Preview Assets.xcassets */; };
-		57539F6926DD6E7500BFC63F /* RickCardsMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57539F6826DD6E7500BFC63F /* RickCardsMortyUITests.swift */; };
 		57539F7726DD717C00BFC63F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57539F7626DD717C00BFC63F /* GoogleService-Info.plist */; };
 		5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35126E037A300D35C07 /* ActivityIndicator.swift */; };
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
-		578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */; };
-		57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetail.swift */; };
+		57E49540270B929A00BF3D16 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */; };
 		57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeRequest.swift */; };
-		57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */; };
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
-		AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */; };
+		AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = AF0043262CB4697D00817EDB /* SwiftUIX */; };
+		AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */; };
+		AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5C498E2CD07693004E3AD5 /* HomeFeatureTests.swift */; };
+		AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */; };
+		AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */; };
+		AF81A4892CB723E30088D96B /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4882CB723E30088D96B /* HomeFeature.swift */; };
+		AF81A48B2CB742670088D96B /* CharacterDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */; };
+		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
+		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
+		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
+		AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */; };
+		AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */; };
+		AFC993A52E971C9000D1CDCF /* App+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC993A42E971C8600D1CDCF /* App+Extension.swift */; };
+		AFE766B12CB4977900D3394F /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = AFE766B02CB4977900D3394F /* ComposableArchitecture */; };
+		AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE766B42CB49D5E00D3394F /* LoginFeature.swift */; };
+		AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,22 +53,12 @@
 			remoteGlobalIDString = 57539F4726DD6E7300BFC63F;
 			remoteInfo = RickCardsMorty;
 		};
-		57539F6526DD6E7500BFC63F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57539F4026DD6E7300BFC63F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57539F4726DD6E7300BFC63F;
-			remoteInfo = RickCardsMorty;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMortyTests.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMortyTests/Pods-RickCardsMortyTests.release.xcconfig"; sourceTree = "<group>"; };
 		572B4AB526EFE66B000D9410 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		572B4AB726EFE863000D9410 /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
 		572BE52E26F01319007F1AEF /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
-		572BE53126FBC893007F1AEF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		574A3F5526FCDC8D00FC47CF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCustom.swift; sourceTree = "<group>"; };
 		574A3F5926FE18FD00FC47CF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -72,30 +70,27 @@
 		57539F5226DD6E7500BFC63F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57539F5426DD6E7500BFC63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57539F5926DD6E7500BFC63F /* RickCardsMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickCardsMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCardsMortyTests.swift; sourceTree = "<group>"; };
 		57539F5F26DD6E7500BFC63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57539F6426DD6E7500BFC63F /* RickCardsMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickCardsMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57539F6826DD6E7500BFC63F /* RickCardsMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickCardsMortyUITests.swift; sourceTree = "<group>"; };
-		57539F6A26DD6E7500BFC63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57539F7626DD717C00BFC63F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "RickCardsMorty/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5768F35126E037A300D35C07 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
-		578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		57E4953F270B929A00BF3D16 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
+		57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		57E49541270B999900BF3D16 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
-		57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		57E7091826EAC723005243F1 /* TestPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.release.xcconfig"; sourceTree = "<group>"; };
-		5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMorty_RickCardsMortyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMortyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickCardsMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickCardsMorty.debug.xcconfig"; path = "Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty.debug.xcconfig"; sourceTree = "<group>"; };
+		AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMocks.swift; sourceTree = "<group>"; };
+		AF5B02CE2CBEF34C00FDFB67 /* RickCardsMorty.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = RickCardsMorty.xctestplan; path = RickCardsMorty/RickCardsMorty.xctestplan; sourceTree = "<group>"; };
+		AF5B02CF2CBEF3BD00FDFB67 /* CICDTool.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CICDTool.xctestplan; sourceTree = "<group>"; };
+		AF5C498E2CD07693004E3AD5 /* HomeFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeatureTests.swift; sourceTree = "<group>"; };
+		AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
+		AF81A4882CB723E30088D96B /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
+		AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
+		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
+		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
+		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +98,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD17742FD8B2AF131E78EFEC /* Pods_RickCardsMorty.framework in Frameworks */,
-				574A3F6126FE7C5800FC47CF /* SwiftUIX in Frameworks */,
+				AFB16EBB2CB46CA400C6E783 /* GoogleSignIn in Frameworks */,
+				AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */,
+				AFE766B12CB4977900D3394F /* ComposableArchitecture in Frameworks */,
+				AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */,
+				AFB16EBD2CB46CA400C6E783 /* GoogleSignInSwift in Frameworks */,
+				AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */,
+				AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,34 +112,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35446C4649EE8283F5C3C79E /* Pods_RickCardsMortyTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57539F6126DD6E7500BFC63F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3EC0603EDF20183603059D50 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ACD7F415DDEDAD584013AB7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */,
-				5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */,
-				C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */,
-				AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */,
-				1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */,
-				1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		572B4AB326EFE639000D9410 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,29 +132,22 @@
 			children = (
 				572BE52E26F01319007F1AEF /* CharacterService.swift */,
 				57E49541270B999900BF3D16 /* EpisodeRequest.swift */,
+				AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		572BE53026FBC87C007F1AEF /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				572BE53126FBC893007F1AEF /* HomeViewModel.swift */,
-				57E49543270BA2E400BF3D16 /* CharacterDetailViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		57539F3F26DD6E7300BFC63F = {
 			isa = PBXGroup;
 			children = (
+				AF5B02CF2CBEF3BD00FDFB67 /* CICDTool.xctestplan */,
+				AF5B02CE2CBEF34C00FDFB67 /* RickCardsMorty.xctestplan */,
+				AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */,
 				57539F7626DD717C00BFC63F /* GoogleService-Info.plist */,
 				57539F4A26DD6E7300BFC63F /* RickCardsMorty */,
 				57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */,
-				57539F6726DD6E7500BFC63F /* RickCardsMortyUITests */,
 				57539F4926DD6E7300BFC63F /* Products */,
-				0ACD7F415DDEDAD584013AB7 /* Pods */,
-				75C35BFF6BDBF0424C1C7775 /* Frameworks */,
+				AFB16EB92CB46CA400C6E783 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,7 +156,6 @@
 			children = (
 				57539F4826DD6E7300BFC63F /* RickCardsMorty.app */,
 				57539F5926DD6E7500BFC63F /* RickCardsMortyTests.xctest */,
-				57539F6426DD6E7500BFC63F /* RickCardsMortyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +169,7 @@
 				578CAC7B26DD95B70062DA31 /* Login */,
 				5768F35026E0378C00D35C07 /* Utils */,
 				57539F4B26DD6E7300BFC63F /* RickCardsMortyApp.swift */,
+				AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */,
 				5768F35326E047C400D35C07 /* EntryView.swift */,
 				57539F4F26DD6E7500BFC63F /* Assets.xcassets */,
 				57539F5426DD6E7500BFC63F /* Info.plist */,
@@ -218,25 +189,17 @@
 		57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF68BA8A2CD06786007EF435 /* Home */,
 				57539F5F26DD6E7500BFC63F /* Info.plist */,
-				57539F5D26DD6E7500BFC63F /* RickCardsMortyTests.swift */,
 			);
 			path = RickCardsMortyTests;
-			sourceTree = "<group>";
-		};
-		57539F6726DD6E7500BFC63F /* RickCardsMortyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				57539F6826DD6E7500BFC63F /* RickCardsMortyUITests.swift */,
-				57539F6A26DD6E7500BFC63F /* Info.plist */,
-			);
-			path = RickCardsMortyUITests;
 			sourceTree = "<group>";
 		};
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				57E7091826EAC723005243F1 /* TestPlayground.playground */,
+				AFC993A42E971C8600D1CDCF /* App+Extension.swift */,
+				AF5B02CB2CBEEFB600FDFB67 /* Mocks */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
@@ -250,23 +213,13 @@
 			isa = PBXGroup;
 			children = (
 				57E7090E26EAC0E1005243F1 /* View */,
-				578CAC7E26DDAB080062DA31 /* ViewModel */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		578CAC7E26DDAB080062DA31 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				578CAC7F26DDAB1D0062DA31 /* AuthenticationViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		57E7090D26EAC0CF005243F1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				572BE53026FBC87C007F1AEF /* ViewModel */,
 				57E7091426EAC244005243F1 /* Model */,
 				57E7090F26EAC0FC005243F1 /* View */,
 			);
@@ -278,6 +231,7 @@
 			children = (
 				57539F4D26DD6E7300BFC63F /* LoginView.swift */,
 				578CAC7C26DD95D50062DA31 /* SignInButton.swift */,
+				AFE766B42CB49D5E00D3394F /* LoginFeature.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,7 +241,9 @@
 			children = (
 				57E7091026EAC10F005243F1 /* HomeView.swift */,
 				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
-				57E4953F270B929A00BF3D16 /* CharacterDetail.swift */,
+				57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */,
+				AF81A4882CB723E30088D96B /* HomeFeature.swift */,
+				AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,12 +256,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		75C35BFF6BDBF0424C1C7775 /* Frameworks */ = {
+		AF5B02CB2CBEEFB600FDFB67 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				A65659E2BE50AD63AC45BED3 /* Pods_RickCardsMorty.framework */,
-				5C13324108B01645499F06F1 /* Pods_RickCardsMorty_RickCardsMortyUITests.framework */,
-				6B33B867551FC688DC716592 /* Pods_RickCardsMortyTests.framework */,
+				AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AF68BA8A2CD06786007EF435 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AF5C498E2CD07693004E3AD5 /* HomeFeatureTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AFB16EB92CB46CA400C6E783 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,19 +286,24 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57539F6D26DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMorty" */;
 			buildPhases = (
-				C92A19A7637C8037B9FCE14D /* [CP] Check Pods Manifest.lock */,
 				57539F4426DD6E7300BFC63F /* Sources */,
 				57539F4526DD6E7300BFC63F /* Frameworks */,
 				57539F4626DD6E7300BFC63F /* Resources */,
-				FFA0BF2CE483572D361E5A9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AFC993A32E971AE200D1CDCF /* PBXTargetDependency */,
 			);
 			name = RickCardsMorty;
 			packageProductDependencies = (
-				574A3F6026FE7C5800FC47CF /* SwiftUIX */,
+				AF0043262CB4697D00817EDB /* SwiftUIX */,
+				AFB16EB22CB46B5600C6E783 /* FirebaseAuth */,
+				AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */,
+				AFB16EB62CB46B5600C6E783 /* FirebaseCore */,
+				AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */,
+				AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */,
+				AFE766B02CB4977900D3394F /* ComposableArchitecture */,
 			);
 			productName = RickCardsMorty;
 			productReference = 57539F4826DD6E7300BFC63F /* RickCardsMorty.app */;
@@ -339,7 +313,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57539F7026DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyTests" */;
 			buildPhases = (
-				AD3D6E47269119E3B1BBF331 /* [CP] Check Pods Manifest.lock */,
 				57539F5526DD6E7500BFC63F /* Sources */,
 				57539F5626DD6E7500BFC63F /* Frameworks */,
 				57539F5726DD6E7500BFC63F /* Resources */,
@@ -350,29 +323,11 @@
 				57539F5B26DD6E7500BFC63F /* PBXTargetDependency */,
 			);
 			name = RickCardsMortyTests;
+			packageProductDependencies = (
+			);
 			productName = RickCardsMortyTests;
 			productReference = 57539F5926DD6E7500BFC63F /* RickCardsMortyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		57539F6326DD6E7500BFC63F /* RickCardsMortyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 57539F7326DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyUITests" */;
-			buildPhases = (
-				41183BCEDDC28E968363B5DC /* [CP] Check Pods Manifest.lock */,
-				57539F6026DD6E7500BFC63F /* Sources */,
-				57539F6126DD6E7500BFC63F /* Frameworks */,
-				57539F6226DD6E7500BFC63F /* Resources */,
-				C91294FDF0EA684F6BB1F7A0 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				57539F6626DD6E7500BFC63F /* PBXTargetDependency */,
-			);
-			name = RickCardsMortyUITests;
-			productName = RickCardsMortyUITests;
-			productReference = 57539F6426DD6E7500BFC63F /* RickCardsMortyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -380,18 +335,16 @@
 		57539F4026DD6E7300BFC63F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					57539F4726DD6E7300BFC63F = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					57539F5826DD6E7500BFC63F = {
 						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 57539F4726DD6E7300BFC63F;
-					};
-					57539F6326DD6E7500BFC63F = {
-						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1540;
 						TestTargetID = 57539F4726DD6E7300BFC63F;
 					};
 				};
@@ -407,6 +360,10 @@
 			mainGroup = 57539F3F26DD6E7300BFC63F;
 			packageReferences = (
 				574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
 			productRefGroup = 57539F4926DD6E7300BFC63F /* Products */;
 			projectDirPath = "";
@@ -414,7 +371,6 @@
 			targets = (
 				57539F4726DD6E7300BFC63F /* RickCardsMorty */,
 				57539F5826DD6E7500BFC63F /* RickCardsMortyTests */,
-				57539F6326DD6E7500BFC63F /* RickCardsMortyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -424,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */,
 				57539F5326DD6E7500BFC63F /* Preview Assets.xcassets in Resources */,
 				57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */,
 				57539F7726DD717C00BFC63F /* GoogleService-Info.plist in Resources */,
@@ -437,143 +394,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57539F6226DD6E7500BFC63F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		41183BCEDDC28E968363B5DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMorty-RickCardsMortyUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD3D6E47269119E3B1BBF331 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMortyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C91294FDF0EA684F6BB1F7A0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty-RickCardsMortyUITests/Pods-RickCardsMorty-RickCardsMortyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C92A19A7637C8037B9FCE14D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickCardsMorty-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFA0BF2CE483572D361E5A9C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RickCardsMorty/Pods-RickCardsMorty-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		57539F4426DD6E7300BFC63F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E49540270B929A00BF3D16 /* CharacterDetail.swift in Sources */,
+				57E49540270B929A00BF3D16 /* CharacterDetailView.swift in Sources */,
 				57E7091626EAC275005243F1 /* Character.swift in Sources */,
-				578CAC8026DDAB1D0062DA31 /* AuthenticationViewModel.swift in Sources */,
 				57E7091126EAC10F005243F1 /* HomeView.swift in Sources */,
 				57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */,
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
 				57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */,
+				AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */,
 				574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
 				572B4AB626EFE66B000D9410 /* Request.swift in Sources */,
-				572BE53226FBC893007F1AEF /* HomeViewModel.swift in Sources */,
+				AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */,
 				578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */,
 				572B4AB826EFE863000D9410 /* RequestDispatcher.swift in Sources */,
 				572BE52F26F01319007F1AEF /* CharacterService.swift in Sources */,
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
+				AFC993A52E971C9000D1CDCF /* App+Extension.swift in Sources */,
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
-				57E49544270BA2E400BF3D16 /* CharacterDetailViewModel.swift in Sources */,
 				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
+				AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */,
+				AF81A48B2CB742670088D96B /* CharacterDetailFeature.swift in Sources */,
+				AFE766B52CB49D5E00D3394F /* LoginFeature.swift in Sources */,
+				AF81A4892CB723E30088D96B /* HomeFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,14 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57539F6026DD6E7500BFC63F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57539F6926DD6E7500BFC63F /* RickCardsMortyUITests.swift in Sources */,
+				AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,10 +444,9 @@
 			target = 57539F4726DD6E7300BFC63F /* RickCardsMorty */;
 			targetProxy = 57539F5A26DD6E7500BFC63F /* PBXContainerItemProxy */;
 		};
-		57539F6626DD6E7500BFC63F /* PBXTargetDependency */ = {
+		AFC993A32E971AE200D1CDCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 57539F4726DD6E7300BFC63F /* RickCardsMorty */;
-			targetProxy = 57539F6526DD6E7500BFC63F /* PBXContainerItemProxy */;
+			productRef = AFC993A22E971AE200D1CDCF /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -643,8 +486,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -659,11 +504,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -704,8 +550,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -714,10 +562,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -726,22 +575,24 @@
 		};
 		57539F6E26DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E521BCA01CA5F0F899259B14 /* Pods-RickCardsMorty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RickCardsMorty/Preview Content\"";
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -749,22 +600,24 @@
 		};
 		57539F6F26DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A50DDDAA7E9A4CDAD3D09FD /* Pods-RickCardsMorty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"RickCardsMorty/Preview Content\"";
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = RickCardsMorty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -772,14 +625,12 @@
 		};
 		57539F7126DD6E7500BFC63F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1196583D59F6EFE410C1C049 /* Pods-RickCardsMortyTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -787,22 +638,25 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMortyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RickCardsMorty.app/RickCardsMorty";
 			};
 			name = Debug;
 		};
 		57539F7226DD6E7500BFC63F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C7F3B16293D7F53B593AA98 /* Pods-RickCardsMortyTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
 				INFOPLIST_FILE = RickCardsMortyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -810,51 +664,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMortyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RickCardsMorty.app/RickCardsMorty";
-			};
-			name = Release;
-		};
-		57539F7426DD6E7500BFC63F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C57BBCF8ABED2A0608DF019E /* Pods-RickCardsMorty-RickCardsMortyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
-				INFOPLIST_FILE = RickCardsMortyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMortyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RickCardsMorty;
-			};
-			name = Debug;
-		};
-		57539F7526DD6E7500BFC63F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF01707A4569740327CF6D10 /* Pods-RickCardsMorty-RickCardsMortyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DL8VWTN77Q;
-				INFOPLIST_FILE = RickCardsMortyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sennin.dev.RickCardsMorty.RickCardsMortyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RickCardsMorty;
 			};
 			name = Release;
 		};
@@ -868,7 +684,7 @@
 				57539F6C26DD6E7500BFC63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		57539F6D26DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMorty" */ = {
 			isa = XCConfigurationList;
@@ -877,7 +693,7 @@
 				57539F6F26DD6E7500BFC63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		57539F7026DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyTests" */ = {
 			isa = XCConfigurationList;
@@ -886,16 +702,7 @@
 				57539F7226DD6E7500BFC63F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		57539F7326DD6E7500BFC63F /* Build configuration list for PBXNativeTarget "RickCardsMortyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				57539F7426DD6E7500BFC63F /* Debug */,
-				57539F7526DD6E7500BFC63F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
@@ -904,17 +711,84 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
 			requirement = {
+				kind = exactVersion;
+				version = 0.2.3;
+			};
+		};
+		AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 11.3.0;
+			};
+		};
+		AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 8.0.0;
+			};
+		};
+		AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.22.3;
+			};
+		};
+		AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.9;
+				minimumVersion = 0.57.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		574A3F6026FE7C5800FC47CF /* SwiftUIX */ = {
+		AF0043262CB4697D00817EDB /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		AFB16EB22CB46B5600C6E783 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		AFB16EB62CB46B5600C6E783 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		AFB16EBA2CB46CA400C6E783 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		AFB16EBC2CB46CA400C6E783 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		AFC993A22E971AE200D1CDCF /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		AFE766B02CB4977900D3394F /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

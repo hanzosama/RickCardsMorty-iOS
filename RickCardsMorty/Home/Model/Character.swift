@@ -7,42 +7,42 @@
 
 import Foundation
 
-struct CharacterResponse: Decodable{
-    var info:Info
-    var results:[Character]
+public struct CharacterResponse: Decodable, Equatable {
+    var info: Info
+    var results: [Character]
 }
 
-enum CharacterStatus: String, Decodable {
+public enum CharacterStatus: String, Decodable, Equatable {
     case alive = "Alive"
     case unknown = "unknown"
     case dead = "Dead"
 }
 
-enum CharacterGender: String, Decodable{
+public enum CharacterGender: String, Decodable, Equatable {
     case female = "Female"
     case male = "Male"
     case genderless = "Genderless"
     case unknown = "unknown"
 }
 
-struct CharacterOrigin: Decodable{
-    var name:String
+public struct CharacterOrigin: Decodable, Equatable {
+    var name: String
 }
 
-struct CharacterLocation: Decodable {
-    var name:String
+public struct CharacterLocation: Decodable, Equatable {
+    var name: String
 }
 
-struct Character: Decodable  {
-    var id:Int
-    var name:String
-    var status:CharacterStatus
-    var species:String
-    var gender:CharacterGender
-    var imageUrl:String
-    var origin:CharacterOrigin
-    var location:CharacterLocation
-    var episode:[String]
+public struct Character: Decodable, Equatable {
+    var id: Int
+    var name: String
+    var status: CharacterStatus
+    var species: String
+    var gender: CharacterGender
+    var imageUrl: String
+    var origin: CharacterOrigin
+    var location: CharacterLocation
+    var episode: [String]
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -58,13 +58,12 @@ struct Character: Decodable  {
     
 }
 
-
-struct Episode: Decodable {
-    var id:Int
-    var name:String
-    var episode:String
-    var airDate:String
-    var charactersURL:[String]
+public struct Episode: Decodable, Equatable {
+    var id: Int
+    var name: String
+    var episode: String
+    var airDate: String
+    var charactersURL: [String]
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
@@ -74,6 +73,6 @@ struct Episode: Decodable {
     }
 }
 
-struct Info: Decodable {
-    var pages:Int
+public struct Info: Decodable, Equatable {
+    var pages: Int
 }

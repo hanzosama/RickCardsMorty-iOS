@@ -8,9 +8,11 @@
 import Foundation
 import Combine
 
-enum EpisodeRequest: Request{
+import Dependencies
+
+enum EpisodeRequest: Request {
     
-    case id(id:Int)
+    case id(id: Int)
     
     var path: String {
         switch self {
@@ -21,52 +23,61 @@ enum EpisodeRequest: Request{
     
     var method: HTTPMethod {
         switch self {
-        case .id(_):
+        case .id:
             return .GET
         }
     }
     
-    var parameters: RequestParams{
+    var parameters: RequestParams {
         switch self {
-        case .id(_):
+        case .id:
             return .url([:])
         }
     }
     
     var headers: HTTPHeadersParams? {
         switch self {
-        case .id(_):
+        case .id:
             return [:]
         }
     }
     
-    var responseDataType: DataType{
+    var responseDataType: DataType {
         switch self {
-        case .id(_):
-            return .Json
+        case .id:
+            return .json
         }
     }
-    
-    
 }
 
-
-protocol EpisodeServiceProtocol {
-    func fetchEpisodes(id:Int)  -> AnyPublisher<Episode,RequestError>
+public protocol EpisodeService {
+    func fetchEpisodes(id: Int) async throws -> Episode
 }
 
-class EpisodeService: EpisodeServiceProtocol {
+public struct  EpisodeServiceImpl: EpisodeService {
     
-    private var cancelable: Set<AnyCancellable> = []
-    
-    var requestDispatcher:RequestDispatcher {
+    var requestDispatcher: RequestDispatcher {
         RequestDispatcher(environment: .init("prod", host: "https://rickandmortyapi.com/", baseURL: "api/"))
     }
     
-    func fetchEpisodes(id: Int) -> AnyPublisher<Episode, RequestError> {
+    public func fetchEpisodes(id: Int) async throws -> Episode {
         let request = EpisodeRequest.id(id: id)
-        return self.requestDispatcher.execute(request: request, reponseObject: Episode.self)
+        return try await self.requestDispatcher.execute(request: request, responseObject: Episode.self)
     }
     
-    
+}
+
+extension DependencyValues {
+    public var episodeService: EpisodeService {
+        get { self[EpisodeServiceKey.self] }
+        set { self[EpisodeServiceKey.self] = newValue }
+    }
+}
+
+extension EpisodeServiceImpl {
+    public static let live = EpisodeServiceImpl.init()
+}
+
+public enum EpisodeServiceKey: DependencyKey {
+    public static var liveValue: any EpisodeService = EpisodeServiceImpl.live
 }
