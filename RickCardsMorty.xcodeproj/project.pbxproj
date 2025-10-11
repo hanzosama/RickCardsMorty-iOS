@@ -34,6 +34,7 @@
 		AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */; };
 		AF81A4892CB723E30088D96B /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4882CB723E30088D96B /* HomeFeature.swift */; };
 		AF81A48B2CB742670088D96B /* CharacterDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */; };
+		AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */; };
 		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
 		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
@@ -88,6 +89,7 @@
 		AF81A4862CB6DC6F0088D96B /* EntryViewFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeature.swift; sourceTree = "<group>"; };
 		AF81A4882CB723E30088D96B /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
+		AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeatureTests.swift; sourceTree = "<group>"; };
 		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF89325B2E9B01A200CF439B /* Login */,
 				AF68BA8A2CD06786007EF435 /* Home */,
 				57539F5F26DD6E7500BFC63F /* Info.plist */,
 			);
@@ -270,6 +273,14 @@
 				AF5C498E2CD07693004E3AD5 /* HomeFeatureTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AF89325B2E9B01A200CF439B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AFB16EB92CB46CA400C6E783 /* Frameworks */ = {
@@ -432,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */,
 				AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
