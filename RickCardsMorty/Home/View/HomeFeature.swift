@@ -9,7 +9,6 @@ import Foundation
 
 import ComposableArchitecture
 
-// TODO: pending adding TCA unit tests && snapshot testing
 @Reducer
 struct HomeFeature {
     
