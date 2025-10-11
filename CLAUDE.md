@@ -163,6 +163,10 @@ Services follow a specific TCA dependency pattern:
 
 See CharacterService.swift for the complete pattern understanding.
 
+### Test Coverage
+- It is important to maintain coverage over 80%
+- The coverage excludes SwiftUI View files `*View.swit`
+
 ## Important Implementation Details
 
 ### Pagination in HomeFeature
