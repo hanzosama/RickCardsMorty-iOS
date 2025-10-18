@@ -37,6 +37,8 @@
 		AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */; };
 		AF89325F2E9B078500CF439B /* EntryViewFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */; };
 		AF8932622EA2E83D00CF439B /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932612EA2E83400CF439B /* CharacterView.swift */; };
+		AF8932652EA3175900CF439B /* CharacterDetailFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932642EA3175900CF439B /* CharacterDetailFeatureTests.swift */; };
+		AF8932672EA3177800CF439B /* EpisodeMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932662EA3177800CF439B /* EpisodeMocks.swift */; };
 		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
 		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
@@ -94,6 +96,8 @@
 		AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeatureTests.swift; sourceTree = "<group>"; };
 		AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeatureTests.swift; sourceTree = "<group>"; };
 		AF8932612EA2E83400CF439B /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		AF8932642EA3175900CF439B /* CharacterDetailFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeatureTests.swift; sourceTree = "<group>"; };
+		AF8932662EA3177800CF439B /* EpisodeMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeMocks.swift; sourceTree = "<group>"; };
 		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -196,9 +200,10 @@
 		57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */,
-				AF89325B2E9B01A200CF439B /* Login */,
 				AF68BA8A2CD06786007EF435 /* Home */,
+				AF89325B2E9B01A200CF439B /* Login */,
+				AF8932632EA3173C00CF439B /* Character */,
+				AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */,
 				57539F5F26DD6E7500BFC63F /* Info.plist */,
 			);
 			path = RickCardsMortyTests;
@@ -207,8 +212,8 @@
 		5768F35026E0378C00D35C07 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AFC993A42E971C8600D1CDCF /* App+Extension.swift */,
 				AF5B02CB2CBEEFB600FDFB67 /* Mocks */,
+				AFC993A42E971C8600D1CDCF /* App+Extension.swift */,
 				5768F35126E037A300D35C07 /* ActivityIndicator.swift */,
 				574A3F5526FCDC8D00FC47CF /* View+Extension.swift */,
 				574A3F5726FD4A8A00FC47CF /* NavigationBarCustom.swift */,
@@ -265,6 +270,7 @@
 		AF5B02CB2CBEEFB600FDFB67 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				AF8932662EA3177800CF439B /* EpisodeMocks.swift */,
 				AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */,
 			);
 			path = Mocks;
@@ -293,6 +299,14 @@
 				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
 				57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */,
 				AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		AF8932632EA3173C00CF439B /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				AF8932642EA3175900CF439B /* CharacterDetailFeatureTests.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				5768F35226E037A300D35C07 /* ActivityIndicator.swift in Sources */,
 				57539F4E26DD6E7300BFC63F /* LoginView.swift in Sources */,
 				AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */,
+				AF8932672EA3177800CF439B /* EpisodeMocks.swift in Sources */,
 				574A3F5A26FE18FD00FC47CF /* ImageLoader.swift in Sources */,
 				57539F4C26DD6E7300BFC63F /* RickCardsMortyApp.swift in Sources */,
 				572B4AB626EFE66B000D9410 /* Request.swift in Sources */,
@@ -459,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF89325F2E9B078500CF439B /* EntryViewFeatureTests.swift in Sources */,
+				AF8932652EA3175900CF439B /* CharacterDetailFeatureTests.swift in Sources */,
 				AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */,
 				AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */,
 			);

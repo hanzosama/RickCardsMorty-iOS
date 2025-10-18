@@ -19,7 +19,7 @@ RickCardsMorty is a SwiftUI iOS app that demonstrates **The Composable Architect
 ### Building
 ```bash
 # Build the app for simulator
-xcodebuild -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16' build
+xcodebuild -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' build
 
 # Build for device
 xcodebuild -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination generic/platform=iOS build
@@ -28,13 +28,13 @@ xcodebuild -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination
 ### Testing
 ```bash
 # Run all tests
-xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16'
+xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0'
 
 # Run tests using test plan
-xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -testPlan CICDTool -destination 'platform=iOS Simulator,name=iPhone 16'
+xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -testPlan CICDTool -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0'
 
 # Run specific test
-xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:RickCardsMortyTests/HomeFeatureTests/testHomeFeatureBasic
+xcodebuild test -project RickCardsMorty.xcodeproj -scheme RickCardsMorty -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' -only-testing:RickCardsMortyTests/HomeFeatureTests/testHomeFeatureBasic
 ```
 
 ### Linting

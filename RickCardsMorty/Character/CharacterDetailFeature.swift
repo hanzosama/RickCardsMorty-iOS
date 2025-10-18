@@ -56,7 +56,7 @@ struct CharacterDetailFeature {
                 state.isLoadingPage = true
 
                 return .run { send in
-                    let episode = try await episodeService.fetchEpisodes(id: id)
+                    let episode = try await episodeService.fetchEpisodes(id)
                     await send(.processEpisode(episode))
                 }
 
