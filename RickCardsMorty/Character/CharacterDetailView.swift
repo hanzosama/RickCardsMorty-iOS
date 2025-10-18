@@ -24,6 +24,10 @@ struct CharacterDetailView: View {
         ZStack {
             Color("cardColor").edgesIgnoringSafeArea(.all)
             VStack(alignment: .center) {
+                
+                CharacterView(store.character)
+                    .clipShape(.capsule)
+                
                 if let episode = store.episode {
                     Text(episode.name)
                         .font(Font.custom(mainFont, size: 24))
@@ -51,32 +55,41 @@ struct CharacterDetailView: View {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
                             ForEach(store.characters, id: \.id) { character in
                                 if character.id != store.character.id {
-                                    VStack {
-                                        RemoteImage(
-                                            stringURL: character.imageUrl,
-                                            imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white : .black) },
+                                    Button {
+                                        store.send(.characterTapped(character))
+                                    } label: {
+                                        VStack {
+                                            RemoteImage(
+                                                stringURL: character.imageUrl,
+                                                imagePlaceholder: { Text("Loading ...").foregroundColor(colorScheme == .light ? .white : .black) },
                                                 
-                                            image: { Image(uiImage: $0).resizable() }
-                                        )
-                                        .width(100)
-                                        .height(100)
-                                        .padding(1)
-                                        .aspectRatio(contentMode: .fit)
-                                        .clipShape(Circle())
-                                        HStack(alignment: .center) {
-                                            Circle()
-                                                .fill(getStatusColor(character))
-                                                .frame(width: 10, height: 10, alignment: .leading)
-                                            Spacer()
-                                            Text(character.name)
-                                                .font(Font.custom(mainFont, size: 16))
-                                                .foregroundColor(colorScheme == .light ? .white : .black)
-                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                                image: { Image(uiImage: $0).resizable() }
+                                            )
+                                            .width(100)
+                                            .height(100)
+                                            .padding(1)
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Circle())
+                                            HStack(alignment: .center) {
+                                                Circle()
+                                                    .fill(getStatusColor(character))
+                                                    .frame(width: 10, height: 10, alignment: .leading)
+                                                Spacer()
+                                                Text(character.name)
+                                                    .font(Font.custom(mainFont, size: 16))
+                                                    .foregroundColor(colorScheme == .light ? .white : .black)
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                    }
+                    .navigationDestination(
+                        item: $store.scope(state: \.destination, action: \.destination)
+                    ) { store in
+                        CharacterDetailView(store: store)
                     }
                 }
             }

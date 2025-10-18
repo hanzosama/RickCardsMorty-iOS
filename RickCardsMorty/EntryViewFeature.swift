@@ -17,7 +17,7 @@ struct EntryViewFeature {
     public init() { }
     
     @ObservableState
-    enum State {
+    enum State: Equatable {
         case login(LoginFeature.State)
         case home(HomeFeature.State)
     }
@@ -28,7 +28,15 @@ struct EntryViewFeature {
     }
     
     public var body: some ReducerOf<Self> {
+        Scope(state: \.login, action: \.login) {
+            LoginFeature()
+        }
         
+        Scope(state: \.home, action: \.home) {
+            HomeFeature()
+        }
+        
+        // Parent reducer handles state transitions FIRST
         Reduce { state, action in
             switch action {
             case .login(.signInSuccess):
@@ -46,14 +54,6 @@ struct EntryViewFeature {
                 break
             }
             return .none
-        }
-        
-        Scope(state: \.login, action: \.login) {
-            LoginFeature()
-        }
-        
-        Scope(state: \.home, action: \.home) {
-            HomeFeature()
         }
     }
     

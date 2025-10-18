@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # API Keys
 **/GoogleService-Info.plist
+
+# Claude Code
+.claude/

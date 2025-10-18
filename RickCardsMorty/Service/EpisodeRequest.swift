@@ -50,34 +50,44 @@ enum EpisodeRequest: Request {
     }
 }
 
-public protocol EpisodeService {
-    func fetchEpisodes(id: Int) async throws -> Episode
-}
+// Struct base dependency
 
-public struct  EpisodeServiceImpl: EpisodeService {
-    
-    var requestDispatcher: RequestDispatcher {
+public struct EpisodeService {
+
+    static var requestDispatcher: RequestDispatcher {
         RequestDispatcher(environment: .init("prod", host: "https://rickandmortyapi.com/", baseURL: "api/"))
     }
-    
-    public func fetchEpisodes(id: Int) async throws -> Episode {
-        let request = EpisodeRequest.id(id: id)
-        return try await self.requestDispatcher.execute(request: request, responseObject: Episode.self)
-    }
-    
+
+    var fetchEpisodes: (_ id: Int) async throws -> Episode
 }
 
 extension DependencyValues {
     public var episodeService: EpisodeService {
-        get { self[EpisodeServiceKey.self] }
-        set { self[EpisodeServiceKey.self] = newValue }
+        get { self[EpisodeService.self] }
+        set { self[EpisodeService.self] = newValue }
     }
 }
 
-extension EpisodeServiceImpl {
-    public static let live = EpisodeServiceImpl.init()
+extension EpisodeService {
+    public static let live = Self.init(
+        fetchEpisodes: { id in
+            let request = EpisodeRequest.id(id: id)
+            return try await requestDispatcher.execute(request: request, responseObject: Episode.self)
+        }
+    )
 }
 
-public enum EpisodeServiceKey: DependencyKey {
-    public static var liveValue: any EpisodeService = EpisodeServiceImpl.live
+extension EpisodeService: DependencyKey {
+    public static var liveValue = EpisodeService.live
+    public static var testValue = EpisodeService.mock
 }
+
+#if DEBUG
+extension EpisodeService {
+    public static let mock = Self.init(
+        fetchEpisodes: { _ in
+            EpisodeMocks.episodeMock()
+        }
+    )
+}
+#endif

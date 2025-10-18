@@ -27,7 +27,6 @@ struct HomeView: View {
         self.store = store
     }
     
-    // TODO: refactor view components to improve Hierarchy, same with the others main view.
     var body: some View {
         ZStack { // This is due to issue with the Activity indicator navigation
             NavigationStack {
@@ -71,26 +70,7 @@ struct HomeView: View {
                                 alignment: .top
                             )
                         }
-                        .overlay(
-                            Button(action: { // Movement animation
-                                withAnimation(.spring()) {
-                                    proxy.scrollTo(topID, anchor: .top)
-                                }
-                            }, label: {
-                                Image(systemName: "arrow.up")
-                                    .font(.system(size: 20, weight: .semibold))
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.red)
-                                    .clipShape(Circle())
-                                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
-                            })
-                            .padding(.trailing)
-                            .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0) // Hide or show the button according to the scrolloffset
-                            .opacity(-scrollViewOffset > scrollTreshold ? 1 : 0)
-                            .animation(.easeInOut, value: scrollViewOffset),
-                            alignment: .bottomTrailing
-                        )
+                        .overlay(pushUpBtn(proxy), alignment: .bottomTrailing)
                         .onTapGesture {
                             hideKeyboard()
                         }
@@ -128,22 +108,14 @@ struct HomeView: View {
                     CharacterDetailView(store: store)
                 }
                 .navigationTitle("RickCardsMorty")
-                .navigationBarItems(trailing:
-                    HStack {
-                        Button(action: {
-                            store.send(.logoutTap, animation: .easeOut)
-                        }, label: {
-                            Image(systemName: "arrow.forward")
-                                .frame(width: 60, height: 30)
-                                .background(Color.red)
-                                .cornerRadius(5)
-                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
-                        })
-                    }
-                    .foregroundColor(.white)
-                )
+                .navigationBarItems(trailing: backBtn)
             }
-            .navigationBarColor(backgroundColor: UIColor(bgColor), tintColor: .white, titleFontName: mainFont, largeTitleFontName: mainFont)
+            .navigationBarColor(
+                backgroundColor: UIColor(bgColor),
+                tintColor: .white,
+                titleFontName: mainFont,
+                largeTitleFontName: mainFont
+            )
             .navigationViewStyle(StackNavigationViewStyle())
             .onAppear {
                 store.send(.loadCharacters)
@@ -160,6 +132,41 @@ struct HomeView: View {
                 .frame(width: 0, height: 0)
             }
         }
+    }
+    
+    var backBtn: some View {
+        HStack {
+            Button(action: {
+                store.send(.logoutTap, animation: .easeOut)
+            }, label: {
+                Image(systemName: "arrow.forward")
+                    .frame(width: 60, height: 30)
+                    .background(Color.red)
+                    .cornerRadius(5)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+            })
+        }
+        .foregroundColor(.white)
+    }
+    
+    func pushUpBtn(_ proxy: ScrollViewProxy) -> some View {
+        Button(action: { // Movement animation
+            withAnimation(.spring()) {
+                proxy.scrollTo(topID, anchor: .top)
+            }
+        }, label: {
+            Image(systemName: "arrow.up")
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.red)
+                .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+        })
+        .padding(.trailing)
+        .padding(.bottom, getSafeArea().bottom == 0 ? 10 : 0) // Hide or show the button according to the scrolloffset
+        .opacity(-scrollViewOffset > scrollTreshold ? 1 : 0)
+        .animation(.easeInOut, value: scrollViewOffset)
     }
 }
 

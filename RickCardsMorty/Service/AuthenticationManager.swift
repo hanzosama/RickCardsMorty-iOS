@@ -18,59 +18,14 @@ public enum SignInState {
 }
 
 public struct AuthenticationManager {
-    private var configuration: GIDConfiguration?
-    
-    public init() {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        // Create Google Sign In configuration object.
-        self.configuration = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = configuration
-    }
-    
-    @MainActor
-    public func signInUser() async throws {
-        guard configuration != nil, GIDSignIn.sharedInstance.currentUser == nil else {
-            return
-        }
-        
-        // Google Authentication
-        let signInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: (UIApplication.getKeyWindow()?.rootViewController)!)
-        
-        guard let idToken = signInResult.user.idToken else { return }
-        
-        let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: signInResult.user.accessToken.tokenString)
-        
-        // Firebase Authentication
-         _ = try await Auth.auth().signIn(with: credential)
-        
-    }
-    
-    @MainActor
-    public func signOutUser() throws {
-        guard configuration != nil else {
-            return
-        }
-        
-        // Google signOut
-        GIDSignIn.sharedInstance.signOut()
-        
-        // Firebase signOut
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("There was an error closing the app")
-        }
-    }
-    
-    public func restorePreviousSession() async throws {
-        print("Restoring the reprevious session..")
-        try await GIDSignIn.sharedInstance.restorePreviousSignIn()
-        print("Session ok")
-    }
-    
-    public func isLoggedIn() -> Bool {
-        GIDSignIn.sharedInstance.currentUser != nil
-    }
+
+    var signInUser: @MainActor () async throws -> Void
+
+    var signOutUser: @MainActor () async throws -> Void
+
+    var restorePreviousSession: () async throws -> Void
+
+    var isLoggedIn: () -> Bool
 }
 
 extension DependencyValues {
@@ -81,11 +36,78 @@ extension DependencyValues {
 }
 
 extension AuthenticationManager {
-    public static let live =  AuthenticationManager.init()
+    public static let live = Self(
+        signInUser: {
+            guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+            let configuration = GIDConfiguration(clientID: clientID)
+            GIDSignIn.sharedInstance.configuration = configuration
+
+            guard GIDSignIn.sharedInstance.currentUser == nil else {
+                return
+            }
+
+            // Google Authentication
+            let signInResult = try await GIDSignIn.sharedInstance.signIn(
+                withPresenting: (UIApplication.getKeyWindow()?.rootViewController)!
+            )
+
+            guard let idToken = signInResult.user.idToken else { return }
+
+            let credential = GoogleAuthProvider.credential(
+                withIDToken: idToken.tokenString,
+                accessToken: signInResult.user.accessToken.tokenString
+            )
+
+            // Firebase Authentication
+            _ = try await Auth.auth().signIn(with: credential)
+        },
+        signOutUser: {
+            // Google signOut
+            GIDSignIn.sharedInstance.signOut()
+
+            // Firebase signOut
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print("There was an error closing the app")
+                throw error
+            }
+        },
+        restorePreviousSession: {
+            print("Restoring the previous session..")
+            try await GIDSignIn.sharedInstance.restorePreviousSignIn()
+            print("Session ok")
+        },
+        isLoggedIn: {
+            GIDSignIn.sharedInstance.currentUser != nil
+        }
+    )
 }
 
 extension AuthenticationManager: DependencyKey {
     public static let liveValue = AuthenticationManager.live
-    // TODO: Create Mock cases
-    // public static let testValue: AuthenticationManager.mock
+    public static let testValue = AuthenticationManager.mock
 }
+
+#if DEBUG
+extension AuthenticationManager {
+    public static let mock = Self(
+        signInUser: {
+            // Mock implementation - does nothing, succeeds immediately
+            print("[Mock] User signed in successfully")
+        },
+        signOutUser: {
+            // Mock implementation - does nothing, succeeds immediately
+            print("[Mock] User signed out successfully")
+        },
+        restorePreviousSession: {
+            // Mock implementation - does nothing, succeeds immediately
+            print("[Mock] Previous session restored")
+        },
+        isLoggedIn: {
+            // Mock implementation - returns false by default
+            false
+        }
+    )
+}
+#endif
