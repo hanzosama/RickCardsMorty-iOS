@@ -21,7 +21,8 @@ struct CharacterDetailFeature {
         var episode: Episode?
         var isLoadingPage = false
         var characters: [RickCardsMorty.Character] = []
-        
+        @Presents var destination: CharacterDetailFeature.State?
+
         public init(character: RickCardsMorty.Character) {
             self.character = character
         }
@@ -33,15 +34,17 @@ struct CharacterDetailFeature {
         case processEpisode(Episode)
         case processCharacters([RickCardsMorty.Character])
         case loadCharactersEpisode
+        case characterTapped(RickCardsMorty.Character)
+        case destination(PresentationAction<CharacterDetailFeature.Action>)
         case binding(BindingAction<State>)
     }
     
     public var body: some ReducerOf<Self> {
         BindingReducer()
-        
+
         Reduce { state, action in
             switch action {
-                
+
             case .loadEpisodeDetails:
                 guard  !state.character.episode.isEmpty,
                         let episodeUrl = state.character.episode.first,
@@ -49,32 +52,32 @@ struct CharacterDetailFeature {
                        let id = Int(String(idEpisodeSubStr)) else {
                     return .none
                 }
-                
+
                 state.isLoadingPage = true
-                
+
                 return .run { send in
                     let episode = try await episodeService.fetchEpisodes(id: id)
                     await send(.processEpisode(episode))
                 }
-                
+
             case .processEpisode(let episode):
                 state.episode = episode
                 state.isLoadingPage = false
-                
+
             case .loadCharactersEpisode:
                 guard let episode = state.episode else {
                     return .none
                 }
-                
+
                 state.isLoadingPage = true
-                
+
                 var ids: [String] = []
                 episode.charactersURL.forEach({ characterUrl in
                     if let id = characterUrl.split(separator: "/").last {
                         ids.append(String(id))
                     }
                 })
-                
+
                 return .run { [ids] send in
                     let characters = try await characterService.fectchCharatersBy(ids)
                     await send(.processCharacters(characters))
@@ -82,13 +85,22 @@ struct CharacterDetailFeature {
             case .processCharacters(let characters):
                 state.characters = characters
                 state.isLoadingPage = false
-                
+
+            case .characterTapped(let character):
+                state.destination = CharacterDetailFeature.State(character: character)
+
+            case .destination:
+                return .none
+
             case .binding:
                 return .none
-                
+
             }
-            
+
             return .none
+        }
+        .ifLet(\.$destination, action: \.destination) {
+            CharacterDetailFeature()
         }
     }
 }

@@ -36,6 +36,7 @@
 		AF81A48B2CB742670088D96B /* CharacterDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */; };
 		AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */; };
 		AF89325F2E9B078500CF439B /* EntryViewFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */; };
+		AF8932622EA2E83D00CF439B /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932612EA2E83400CF439B /* CharacterView.swift */; };
 		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
 		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
@@ -92,6 +93,7 @@
 		AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeature.swift; sourceTree = "<group>"; };
 		AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeatureTests.swift; sourceTree = "<group>"; };
 		AF89325D2E9B066600CF439B /* EntryViewFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewFeatureTests.swift; sourceTree = "<group>"; };
+		AF8932612EA2E83400CF439B /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		57539F4A26DD6E7300BFC63F /* RickCardsMorty */ = {
 			isa = PBXGroup;
 			children = (
+				AF8932602EA2E7E900CF439B /* Character */,
 				572BE52D26F01278007F1AEF /* Service */,
 				572B4AB326EFE639000D9410 /* Networking */,
 				57E7090D26EAC0CF005243F1 /* Home */,
@@ -246,10 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				57E7091026EAC10F005243F1 /* HomeView.swift */,
-				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
-				57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */,
 				AF81A4882CB723E30088D96B /* HomeFeature.swift */,
-				AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +284,17 @@
 				AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		AF8932602EA2E7E900CF439B /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				AF8932612EA2E83400CF439B /* CharacterView.swift */,
+				57E7091226EAC23A005243F1 /* CharacterCardRow.swift */,
+				57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */,
+				AF81A48A2CB742670088D96B /* CharacterDetailFeature.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 		AFB16EB92CB46CA400C6E783 /* Frameworks */ = {
@@ -432,6 +443,7 @@
 				574A3F5626FCDC8D00FC47CF /* View+Extension.swift in Sources */,
 				AFC993A52E971C9000D1CDCF /* App+Extension.swift in Sources */,
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
+				AF8932622EA2E83D00CF439B /* CharacterView.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
 				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
