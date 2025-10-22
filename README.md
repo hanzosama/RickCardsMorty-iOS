@@ -68,6 +68,25 @@ RickCardsMorty/
 - **Clear separation** between state management and UI components
 - **Testable design** with isolated, composable features
 
+## Testing & Quality Assurance
+
+This project implements comprehensive testing strategies to ensure code reliability and UI consistency:
+
+### **Testing Framework**
+- **Swift Testing** - Modern Swift testing framework for unit tests
+- **TCA TestStore** - Built-in testing utilities for verifying state changes and side effects
+- **Snapshot Testing** - Visual regression testing tool integrated for validating UI consistency across changes and also entity structure consistency (Json evaluated)
+
+### **Test Coverage**
+- Maintains 80%+ test coverage across business logic
+- Focuses on feature testing (reducers, state management, side effects)
+- View files are excluded from coverage metrics
+
+### **Test Organization**
+Tests are organized in the `RickCardsMortyTests/` directory by feature:
+- `HomeFeatureTests.swift` - Tests for character browsing and search logic
+- `SnapshotTests/` - Snapshot tests for UI components ensuring visual consistency
+
 ## Demo
 
 <img src="rickandmortydemo.gif" width="200" height="400" /> 
