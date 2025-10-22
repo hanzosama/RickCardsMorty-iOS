@@ -53,7 +53,7 @@ struct LoginView: View {
 #Preview {
     LoginView(
         store: Store(
-            initialState: LoginFeature.State(),
+            initialState: LoginFeature.State(sessionStatus: .signedIn),
             reducer: LoginFeature.init
         )
     )

@@ -1,0 +1,45 @@
+{
+  "configurations" : [
+    {
+      "id" : "2A4D61F5-2678-4167-8328-15928DDC5A52",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "CharacterDetailFeatureTests"
+          },
+          {
+            "name" : "EntryViewFeatureTests"
+          },
+          {
+            "name" : "HomeFeatureTests"
+          },
+          {
+            "name" : "LoginFeatureTests"
+          }
+        ],
+        "xctestClasses" : [
+          {
+            "name" : "HomeFeatureTests"
+          }
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:RickCardsMorty.xcodeproj",
+        "identifier" : "57539F5826DD6E7500BFC63F",
+        "name" : "RickCardsMortyTests"
+      }
+    }
+  ],
+  "version" : 2
+}
