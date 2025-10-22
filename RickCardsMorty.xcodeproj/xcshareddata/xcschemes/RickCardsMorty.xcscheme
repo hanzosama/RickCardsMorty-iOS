@@ -35,6 +35,9 @@
          <TestPlanReference
             reference = "container:CICDTool.xctestplan">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:SnapshotTestingTestPlan.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference

@@ -7,33 +7,33 @@
 
 import Foundation
 
-public struct CharacterResponse: Decodable, Equatable {
+public struct CharacterResponse: Codable, Equatable {
     var info: Info
     var results: [Character]
 }
 
-public enum CharacterStatus: String, Decodable, Equatable {
+public enum CharacterStatus: String, Codable, Equatable {
     case alive = "Alive"
     case unknown = "unknown"
     case dead = "Dead"
 }
 
-public enum CharacterGender: String, Decodable, Equatable {
+public enum CharacterGender: String, Codable, Equatable {
     case female = "Female"
     case male = "Male"
     case genderless = "Genderless"
     case unknown = "unknown"
 }
 
-public struct CharacterOrigin: Decodable, Equatable {
+public struct CharacterOrigin: Codable, Equatable {
     var name: String
 }
 
-public struct CharacterLocation: Decodable, Equatable {
+public struct CharacterLocation: Codable, Equatable {
     var name: String
 }
 
-public struct Character: Decodable, Equatable {
+public struct Character: Codable, Equatable {
     var id: Int
     var name: String
     var status: CharacterStatus
@@ -58,7 +58,7 @@ public struct Character: Decodable, Equatable {
     
 }
 
-public struct Episode: Decodable, Equatable {
+public struct Episode: Codable, Equatable {
     var id: Int
     var name: String
     var episode: String
@@ -73,6 +73,6 @@ public struct Episode: Decodable, Equatable {
     }
 }
 
-public struct Info: Decodable, Equatable {
+public struct Info: Codable, Equatable {
     var pages: Int
 }

@@ -22,12 +22,15 @@
 		5768F35426E047C400D35C07 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F35326E047C400D35C07 /* EntryView.swift */; };
 		578CAC7D26DD95D50062DA31 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578CAC7C26DD95D50062DA31 /* SignInButton.swift */; };
 		57E49540270B929A00BF3D16 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */; };
-		57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeRequest.swift */; };
+		57E49542270B999900BF3D16 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E49541270B999900BF3D16 /* EpisodeService.swift */; };
 		57E7091126EAC10F005243F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091026EAC10F005243F1 /* HomeView.swift */; };
 		57E7091326EAC23B005243F1 /* CharacterCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091226EAC23A005243F1 /* CharacterCardRow.swift */; };
 		57E7091626EAC275005243F1 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7091526EAC275005243F1 /* Character.swift */; };
 		AF0043272CB4697D00817EDB /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = AF0043262CB4697D00817EDB /* SwiftUIX */; };
 		AF45E7802E99F8F500067EF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF45E77F2E99F8F500067EF2 /* GoogleService-Info.plist */; };
+		AF52E9772EA9414B00072A22 /* BaseSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52E9762EA9414900072A22 /* BaseSnapshotTestCase.swift */; };
+		AF52E9792EA948A000072A22 /* SnapshotTestingTestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = AF52E9782EA948A000072A22 /* SnapshotTestingTestPlan.xctestplan */; };
+		AF52E97C2EA958B900072A22 /* CharacterServiceSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52E97B2EA958B200072A22 /* CharacterServiceSnapshotTests.swift */; };
 		AF5B02CD2CBEEFD000FDFB67 /* CharactersMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */; };
 		AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5C498E2CD07693004E3AD5 /* HomeFeatureTests.swift */; };
 		AF81A4852CB6C2A90088D96B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */; };
@@ -39,6 +42,10 @@
 		AF8932622EA2E83D00CF439B /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932612EA2E83400CF439B /* CharacterView.swift */; };
 		AF8932652EA3175900CF439B /* CharacterDetailFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932642EA3175900CF439B /* CharacterDetailFeatureTests.swift */; };
 		AF8932672EA3177800CF439B /* EpisodeMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8932662EA3177800CF439B /* EpisodeMocks.swift */; };
+		AF974E072EA931B000D36512 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AF974E062EA931B000D36512 /* InlineSnapshotTesting */; };
+		AF974E092EA931B000D36512 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AF974E082EA931B000D36512 /* SnapshotTesting */; };
+		AF974E0B2EA931B000D36512 /* SnapshotTestingCustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = AF974E0A2EA931B000D36512 /* SnapshotTestingCustomDump */; };
+		AF974E0D2EA9320200D36512 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF974E0C2EA931F700D36512 /* LoginViewTests.swift */; };
 		AFB16EB32CB46B5600C6E783 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB22CB46B5600C6E783 /* FirebaseAuth */; };
 		AFB16EB52CB46B5600C6E783 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB42CB46B5600C6E783 /* FirebaseAuthCombine-Community */; };
 		AFB16EB72CB46B5600C6E783 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = AFB16EB62CB46B5600C6E783 /* FirebaseCore */; };
@@ -80,11 +87,14 @@
 		5768F35326E047C400D35C07 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		578CAC7C26DD95D50062DA31 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		57E4953F270B929A00BF3D16 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
-		57E49541270B999900BF3D16 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
+		57E49541270B999900BF3D16 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
 		57E7091026EAC10F005243F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		57E7091226EAC23A005243F1 /* CharacterCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardRow.swift; sourceTree = "<group>"; };
 		57E7091526EAC275005243F1 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		AF45E77F2E99F8F500067EF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF52E9762EA9414900072A22 /* BaseSnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSnapshotTestCase.swift; sourceTree = "<group>"; };
+		AF52E9782EA948A000072A22 /* SnapshotTestingTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SnapshotTestingTestPlan.xctestplan; sourceTree = "<group>"; };
+		AF52E97B2EA958B200072A22 /* CharacterServiceSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterServiceSnapshotTests.swift; sourceTree = "<group>"; };
 		AF5B02CC2CBEEFD000FDFB67 /* CharactersMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersMocks.swift; sourceTree = "<group>"; };
 		AF5B02CE2CBEF34C00FDFB67 /* RickCardsMorty.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = RickCardsMorty.xctestplan; path = RickCardsMorty/RickCardsMorty.xctestplan; sourceTree = "<group>"; };
 		AF5B02CF2CBEF3BD00FDFB67 /* CICDTool.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CICDTool.xctestplan; sourceTree = "<group>"; };
@@ -98,6 +108,7 @@
 		AF8932612EA2E83400CF439B /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		AF8932642EA3175900CF439B /* CharacterDetailFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailFeatureTests.swift; sourceTree = "<group>"; };
 		AF8932662EA3177800CF439B /* EpisodeMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeMocks.swift; sourceTree = "<group>"; };
+		AF974E0C2EA931F700D36512 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
 		AFC993A42E971C8600D1CDCF /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		AFE766B42CB49D5E00D3394F /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -122,6 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF974E0B2EA931B000D36512 /* SnapshotTestingCustomDump in Frameworks */,
+				AF974E072EA931B000D36512 /* InlineSnapshotTesting in Frameworks */,
+				AF974E092EA931B000D36512 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				572BE52E26F01319007F1AEF /* CharacterService.swift */,
-				57E49541270B999900BF3D16 /* EpisodeRequest.swift */,
+				57E49541270B999900BF3D16 /* EpisodeService.swift */,
 				AF81A4842CB6C2A90088D96B /* AuthenticationManager.swift */,
 			);
 			path = Service;
@@ -150,6 +164,7 @@
 		57539F3F26DD6E7300BFC63F = {
 			isa = PBXGroup;
 			children = (
+				AF52E9782EA948A000072A22 /* SnapshotTestingTestPlan.xctestplan */,
 				AF5B02CF2CBEF3BD00FDFB67 /* CICDTool.xctestplan */,
 				AF5B02CE2CBEF34C00FDFB67 /* RickCardsMorty.xctestplan */,
 				AFE766B82CB4A1BA00D3394F /* .swiftlint.yml */,
@@ -200,6 +215,8 @@
 		57539F5C26DD6E7500BFC63F /* RickCardsMortyTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF52E97A2EA9581000072A22 /* Service */,
+				AF52E9762EA9414900072A22 /* BaseSnapshotTestCase.swift */,
 				AF68BA8A2CD06786007EF435 /* Home */,
 				AF89325B2E9B01A200CF439B /* Login */,
 				AF8932632EA3173C00CF439B /* Character */,
@@ -267,6 +284,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AF52E97A2EA9581000072A22 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AF52E97B2EA958B200072A22 /* CharacterServiceSnapshotTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		AF5B02CB2CBEEFB600FDFB67 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +312,7 @@
 		AF89325B2E9B01A200CF439B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				AF974E0C2EA931F700D36512 /* LoginViewTests.swift */,
 				AF89325A2E9B01A200CF439B /* LoginFeatureTests.swift */,
 			);
 			path = Login;
@@ -363,6 +389,9 @@
 			);
 			name = RickCardsMortyTests;
 			packageProductDependencies = (
+				AF974E062EA931B000D36512 /* InlineSnapshotTesting */,
+				AF974E082EA931B000D36512 /* SnapshotTesting */,
+				AF974E0A2EA931B000D36512 /* SnapshotTestingCustomDump */,
 			);
 			productName = RickCardsMortyTests;
 			productReference = 57539F5926DD6E7500BFC63F /* RickCardsMortyTests.xctest */;
@@ -403,6 +432,7 @@
 				AFB16EB82CB46C6D00C6E783 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				AFE766AF2CB4977900D3394F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				AFE766B22CB498F500D3394F /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				AF974E052EA931B000D36512 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 57539F4926DD6E7300BFC63F /* Products */;
 			projectDirPath = "";
@@ -422,6 +452,7 @@
 				AFE766B92CB4A1BA00D3394F /* .swiftlint.yml in Resources */,
 				57539F5326DD6E7500BFC63F /* Preview Assets.xcassets in Resources */,
 				AF45E7802E99F8F500067EF2 /* GoogleService-Info.plist in Resources */,
+				AF52E9792EA948A000072A22 /* SnapshotTestingTestPlan.xctestplan in Resources */,
 				57539F5026DD6E7500BFC63F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +491,7 @@
 				574A3F5826FD4A8A00FC47CF /* NavigationBarCustom.swift in Sources */,
 				AF8932622EA2E83D00CF439B /* CharacterView.swift in Sources */,
 				5768F35426E047C400D35C07 /* EntryView.swift in Sources */,
-				57E49542270B999900BF3D16 /* EpisodeRequest.swift in Sources */,
+				57E49542270B999900BF3D16 /* EpisodeService.swift in Sources */,
 				574A3F5C26FE58B900FC47CF /* Environment.swift in Sources */,
 				AF81A4872CB6DC6F0088D96B /* EntryViewFeature.swift in Sources */,
 				AF81A48B2CB742670088D96B /* CharacterDetailFeature.swift in Sources */,
@@ -473,9 +504,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF52E9772EA9414B00072A22 /* BaseSnapshotTestCase.swift in Sources */,
 				AF89325F2E9B078500CF439B /* EntryViewFeatureTests.swift in Sources */,
+				AF974E0D2EA9320200D36512 /* LoginViewTests.swift in Sources */,
 				AF8932652EA3175900CF439B /* CharacterDetailFeatureTests.swift in Sources */,
 				AF89325C2E9B01A300CF439B /* LoginFeatureTests.swift in Sources */,
+				AF52E97C2EA958B900072A22 /* CharacterServiceSnapshotTests.swift in Sources */,
 				AF5C498F2CD07693004E3AD5 /* HomeFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +793,14 @@
 				version = 0.2.3;
 			};
 		};
+		AF974E052EA931B000D36512 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.7;
+			};
+		};
 		AFB16EB12CB46B5600C6E783 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -798,6 +840,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 574A3F5F26FE7C5800FC47CF /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		AF974E062EA931B000D36512 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF974E052EA931B000D36512 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		AF974E082EA931B000D36512 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF974E052EA931B000D36512 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		AF974E0A2EA931B000D36512 /* SnapshotTestingCustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF974E052EA931B000D36512 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTestingCustomDump;
 		};
 		AFB16EB22CB46B5600C6E783 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

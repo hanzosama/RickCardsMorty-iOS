@@ -1,0 +1,24 @@
+{
+  "info" : {
+    "pages" : 1
+  },
+  "results" : [
+    {
+      "episode" : [
+        "1"
+      ],
+      "gender" : "unknown",
+      "id" : 1,
+      "image" : "https:\/\/rickandmortyapi.com\/api\/character\/avatar\/1.jpeg",
+      "location" : {
+        "name" : "Earth C-132"
+      },
+      "name" : "Rick",
+      "origin" : {
+        "name" : "Earth"
+      },
+      "species" : "Human",
+      "status" : "Alive"
+    }
+  ]
+}
